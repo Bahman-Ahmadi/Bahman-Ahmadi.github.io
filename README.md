@@ -1,6 +1,6 @@
 ## Welcome to GitHub Pages
 
-Hello, I'm [Bahman Ahmadi](https://github.com/Bahman-Ahmadi/)!
+Hello, I'm [Bahman Ahmadi](https://github.com/Bahman-Ahmadi/). I'm a programmer and I like python!
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
