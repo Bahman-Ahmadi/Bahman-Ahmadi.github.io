@@ -1,24 +1,26 @@
 var user_guid = localStorage.getItem("mluser");
 
+var root = "mobilearn/"
+
 var Links = {
-	"register": "register.html",
-	"login": "register.html?tab=login",
-	"signup": "register.html?tab=signup",
-	"search": "search.html?q=",
-	"search_cat": "search.html?c=",
-	"course": "course.html?id=",
+	"register": root+"register.html",
+	"login": root+"register.html?tab=login",
+	"signup": root+"register.html?tab=signup",
+	"search": root+"search.html?q=",
+	"search_cat": root+"search.html?c=",
+	"course": root+"course.html?id=",
 	"blog": {
-		"posts": "blog.html",
-		"post": "blog.html?post="
+		"posts": root+"blog.html",
+		"post": root+"blog.html?post="
 	},
-	"pay": "pay?count=",
+	"pay": root+"pay?count=",
 	"instagram": "https://instagram.com/mobi.learn",
 	"telegram": "https://t.me/mobi_learn",
 	"github": "https://github.com/mobi_learn",
 	"community": "https://t.me/mobilearn_community",
 	"shortlinks": "https://l.bit.ir/ml?id=",
-	"watch": `watch?user=${user_guid}&course=`,
-	"download": `download?user=${user_guid}&course=`
+	"watch": root+`watch?user=${user_guid}&course=`,
+	"download": root+`download?user=${user_guid}&course=`
 };
 
 var theme = localStorage.getItem("theme") == null ? "light" : localStorage.getItem("theme");
@@ -44,7 +46,7 @@ var sleep = async (ms) => {
 // Clickablization bottomnav items
 if (document.getElementsByClassName("item") != null) {
 	document.querySelectorAll('.item').forEach((el) => {
-		el.onclick = () => { goto(el.id+".html") };
+		el.onclick = () => { goto(root+el.id+".html") };
 	});
 }
 
