@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>MobiLearn - Learn by mobile</title>
+		<meta name="viewport" content="width=device-width"/>
+		<meta rel="icon" href="favicon.ico" type="image/png" />
+		<meta name="theme-color" content="#2962FF">
+		<meta name="msapplication-navbutton-color" content="#2962FF">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#2962FF">
+
+		<link rel="stylesheet" href="dist/lib/bootstrap5/bootstrap-icons.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="dist/lib/bootstrap5/bootstrap5.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="dist/lib/chartist/chartist.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="dist/css/index.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="dist/css/user.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="dist/css/services.css" type="text/css" media="all" />
+	</head>
+	<body>
+		<br>
+		<!-- PROFILE -->
+		<div class="profile d-flex">
+			<div class="prof-rightside d-flex">
+				<div class="prof-imgcontainer">
+					<img class="prof-img" src="dist/assets/user.png" alt="[AVATAR]" />
+				</div>
+				<div class="prof-texts">
+					<p class="prof-textfirst" id="welcome">وقت بخیر،</p>
+					<p class="prof-textsecond bold">کاربر ۱۲۳۴</p>
+				</div>
+			</div>
+			<div class="prof-leftside">
+				<button class="bi bi-arrow-left btn btn-back" onclick="window.history.back();"></button>
+			</div>
+		</div>
+		
+		<br><br>
+		
+		<div id="theme"></div>
+
+		<!-- ITEMS -->
+		<div class="dashboard-items">
+			<div class="dashboard-item" onclick="admin();">
+				<p class="di-icon bi bi-bag"></p>
+				<p class="di-text">درخواست همکاری</p>
+			</div>
+			<div class="dashboard-item" onclick="usersProducts();">
+				<p class="di-icon bi bi-award"></p>
+				<p class="di-text">محصولات کاربران</p>
+			</div>
+			<div class="dashboard-item" onclick="dailyDiscounts();">
+				<p class="di-icon bi bi-percent"></p>
+				<p class="di-text">تخفیف روزانه</p>
+			</div>
+			<div class="dashboard-item" onclick="goto(Links.instagram);">
+				<p class="di-icon bi bi-instagram"></p>
+				<p class="di-text">پیج اینستاگرام</p>
+			</div>
+			
+			<div class="dashboard-item" onclick="goto(Links.telegram);">
+				<p class="di-icon bi bi-telegram"></p>
+				<p class="di-text">کانال تلگرام</p>
+			</div>
+			<div class="dashboard-item" onclick="showMyCourses();">
+				<p class="di-icon bi bi-collection-play"></p>
+				<p class="di-text">دوره‌های من</p>
+			</div>
+			<div class="dashboard-item" onclick="showWallet();">
+				<p class="di-icon bi bi-receipt"></p>
+				<p class="di-text">گزارش مالی</p>
+			</div>
+			<div class="dashboard-item" onclick="notAvailable();">
+				<p class="di-icon bi bi-cart3"></p>
+				<p class="di-text">تهیه اشتراک</p>
+			</div>
+			
+			<div class="dashboard-item" onclick="requestCourse();">
+				<p class="di-icon bi bi-plus-circle-dotted"></p>
+				<p class="di-text">درخواست دوره</p>
+			</div>
+			<div class="dashboard-item" onclick="deleteAccount();">
+				<p class="di-icon bi bi-person-x"></p>
+				<p class="di-text">حذف اکانت</p>
+			</div>
+			<div class="dashboard-item" onclick="goto(Links.blog.posts);">
+				<p class="di-icon bi bi-layout-text-sidebar-reverse"></p>
+				<p class="di-text">وبلاگ</p>
+			</div>
+			<div class="dashboard-item" onclick="rules();">
+				<p class="di-icon bi bi-journal-check"></p>
+				<p class="di-text">قوانین</p>
+			</div>
+			
+			<div class="dashboard-item" onclick="reports();">
+				<p class="di-icon bi bi-exclamation-octagon"></p>
+				<p class="di-text">گزارشات</p>
+			</div>
+			<div class="dashboard-item" onclick="statistics();">
+				<p class="di-icon bi bi-graph-up"></p>
+				<p class="di-text">آمار</p>
+			</div>
+			<div class="dashboard-item" onclick="goto(Links.github);">
+				<p class="di-icon bi bi-github"></p>
+				<p class="di-text">گیت‌هاب</p>
+			</div>
+			<div class="dashboard-item" onclick="goto(Links.community);">
+				<p class="di-icon bi bi-people"></p>
+				<p class="di-text">انجمن</p>
+			</div>
+			
+			<div class="dashboard-item" onclick="help();">
+				<p class="di-icon bi bi-signpost-split"></p>
+				<p class="di-text">راهنما</p>
+			</div>
+			<div class="dashboard-item">
+				<a href="mailto: mobilearn.support@gmail.com" style="text-decoration: none; color: white!important;">
+					<p class="di-icon bi bi-headphones"></p>
+					<p class="di-text">پشتیبانی</p>
+				</a>
+			</div>
+			<div class="dashboard-item" onclick="masters();">
+				<p class="di-icon bi bi-person-square"></p>
+				<p class="di-text">اساتید</p>
+			</div>
+			<div class="dashboard-item" onclick="changeTheme();">
+				<p class="di-icon bi bi-moon"></p>
+				<p class="di-text">تغییر تم</p>
+			</div>
+		</div>
+		
+		<br>
+		
+		
+		<!-- BOTTOM NAVIGATION -->
+		<nav class="navbar fixed-bottom menubar">
+			<div class="item" id="index">
+				<i class="bi bi-house menu-ic"></i> <br>
+				خانه
+			</div>
+			<div class="item" id="search">
+				<i class="bi bi-search menu-ic"></i> <br>
+				جستجو
+			</div>
+			<div class="item" id="bookmarks">
+				<i class="bi bi-bookmarks menu-ic"></i> <br>
+				برگزیده‌ها
+			</div>
+			<div class="item selected" id="user">
+				<i class="bi bi-person menu-ic"></i> <br>
+				پروفایل
+			</div>
+		</nav>
+
+		
+		<script src="dist/lib/chartist/chartist.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/user.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/services.js" charset="utf-8"></script>
+	</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>MobiLearn - Learn by mobile</title>
+		<meta name="viewport" content="width=device-width"/>
+		<meta rel="icon" href="dist/assets/logo.png" type="image/png" />
+		<meta name="theme-color" content="#2962FF">
+		<meta name="msapplication-navbutton-color" content="#2962FF">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#2962FF">
+
+		<link rel="stylesheet" href="dist/lib/bootstrap5/bootstrap-icons.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="dist/lib/bootstrap5/bootstrap5.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="dist/css/index.css" type="text/css" media="all" />
+
+	</head>
+	<body>
+		<!-- HEADER -->
+		<div class="header">
+			<div class="header-content">
+				<div class="d-flex">
+					<div class="header-texts">
+						<!-- HEADER TEXTS -->
+						<span class="header-title bold">مُبی‌لرن</span><br>
+						<span class="header-description">بهت کمک می‌کنیم با گوشیت به آرزو های قشنگت برسی</span><br>
+						<!-- HEADER BUTTONS -->
+						<div class="d-flex">
+							<button class="btn login" onclick="goto(Links.login);">ورود</button>
+							<button class="btn signup" onclick="goto(Links.register);">ثبت‌نام</button>
+						</div>
+					</div>
+					<img src="dist/assets/GIF.gif" alt="[GIF]" class="header-logo" />
+				</div>
+				<!-- SEARCH -->
+				<div class="search-box d-flex">
+					<div class="search-realbox d-flex">
+						<i class="bi bi-search ic-search"></i>
+						<input type="text" class="search-field" id="search" placeholder="چی میخوای یاد بگیری؟" />
+					</div>
+					<button class="btn search-btn" id="searcher"><i class="bi bi-search btn-search-ic"></i></button>
+				</div>
+				<br>
+			</div>
+		</div>
+		<img src="dist/assets/logo.png" alt="[LOGO]" class="site-logo" />
+
+		<!-- TOP COURSES -->
+		<p class="session-title bold">برترین دوره‌ها</p>
+
+		<div class="courses">
+			<div class="course" onclick="goto(Links.course + 'COURSE-ID');">
+				<img class="course-banner" src="dist/assets/banner.jpg" alt="COURSE-LABEL" />
+				<p class="course-name bold">آموزش کاربردی گیت و گیت‌هاب</p>
+				<p class="course-master"><i class="bi bi-person"></i> بهمن احمدی</p>
+				<div class="line"></div>
+				<div class="course-details d-flex">
+					<p class="course-time"><i class="bi bi-clock"></i> ۲۱:۲۱:۰۰</p>
+					<p class="course-price">۷۹,۶۰۰ تومان</p>
+				</div>
+			</div>
+
+			<div class="course" onclick="goto(Links.course + 'COURSE-ID');">
+				<img class="course-banner" src="dist/assets/banner.jpg" alt="COURSE-LABEL" />
+				<p class="course-name bold">آموزش کاربردی گیت و گیت‌هاب</p>
+				<p class="course-master"><i class="bi bi-person"></i> بهمن احمدی</p>
+				<div class="line"></div>
+				<div class="course-details d-flex">
+					<p class="course-time"><i class="bi bi-clock"></i> ۲۱:۲۱:۰۰</p>
+					<p class="course-price">۷۹,۶۰۰ تومان</p>
+				</div>
+			</div>
+
+			<div class="course" onclick="goto(Links.course + 'COURSE-ID');">
+				<img class="course-banner" src="dist/assets/banner.jpg" alt="COURSE-LABEL" />
+				<p class="course-name bold">آموزش کاربردی گیت و گیت‌هاب</p>
+				<p class="course-master"><i class="bi bi-person"></i> بهمن احمدی</p>
+				<div class="line"></div>
+				<div class="course-details d-flex">
+					<p class="course-time"><i class="bi bi-clock"></i> ۲۱:۲۱:۰۰</p>
+					<p class="course-price">۷۹,۶۰۰ تومان</p>
+				</div>
+			</div>
+
+			<div class="course" onclick="goto(Links.course + 'COURSE-ID');">
+				<img class="course-banner" src="dist/assets/banner.jpg" alt="COURSE-LABEL" />
+				<p class="course-name bold">آموزش کاربردی گیت و گیت‌هاب</p>
+				<p class="course-master"><i class="bi bi-person"></i> بهمن احمدی</p>
+				<div class="line"></div>
+				<div class="course-details d-flex">
+					<p class="course-time"><i class="bi bi-clock"></i> ۲۱:۲۱:۰۰</p>
+					<p class="course-price">۷۹,۶۰۰ تومان</p>
+				</div>
+			</div>
+
+			<div class="course" onclick="goto(Links.course + 'COURSE-ID');">
+				<img class="course-banner" src="dist/assets/banner.jpg" alt="COURSE-LABEL" />
+				<p class="course-name bold">آموزش کاربردی گیت و گیت‌هاب</p>
+				<p class="course-master"><i class="bi bi-person"></i> بهمن احمدی</p>
+				<div class="line"></div>
+				<div class="course-details d-flex">
+					<p class="course-time"><i class="bi bi-clock"></i> ۲۱:۲۱:۰۰</p>
+					<p class="course-price">۷۹,۶۰۰ تومان</p>
+				</div>
+			</div>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		
+
+		<!-- BOTTOM NAVIGATION -->
+		<nav class="navbar fixed-bottom menubar">
+			<div class="item selected" id="index">
+				<i class="bi bi-house menu-ic"></i> <br>
+				خانه
+			</div>
+			<div class="item" id="search">
+				<i class="bi bi-search menu-ic"></i> <br>
+				جستجو
+			</div>
+			<div class="item" id="bookmarks">
+				<i class="bi bi-bookmarks menu-ic"></i> <br>
+				برگزیده‌ها
+			</div>
+			<div class="item" id="user">
+				<i class="bi bi-person menu-ic"></i> <br>
+				پروفایل
+			</div>
+		</nav>
+
+		<script src="dist/js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/index.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

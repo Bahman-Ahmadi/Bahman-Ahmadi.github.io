@@ -1,0 +1,165 @@
+/** TOAST **/
+#toast {
+	bottom: 0;
+	width: 90%;
+	left: 0; right: 0;
+	position: fixed;
+	overflow-x: hidden;
+	z-index: 2030!important;
+	margin: auto auto 100px auto;
+	
+	font-size: 14px;
+	border-radius: 0.5rem;
+	color: var(--color-white);
+	background: var(--color-gray-strong);
+}
+.toast-hide {
+	visibility: hidden;
+	animation: hideDown 1200ms;
+}
+#toast.toast-show {
+	visibility: visible;
+	animation: fadeUp 1200ms;
+}
+.toast-real-container {
+	padding: 10px;
+}
+.toast-rightside, .toast-leftside {
+	display: flex;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.toast-leftside {
+	margin-right: auto;
+}
+#toast_icon {
+	font-size: 18px;
+	padding: 2px 0 0 2px;
+	color: var(--color-amber-strong);
+}
+#toast_text {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+#toast_btn {
+	border: none;
+	outline: none;
+	font-weight: bold;
+	background: transparent;
+}
+#toast_btn:hover {
+	backdrop-filter: brightness(60%);
+	padding: 3px;
+	border-radius: 0.5rem;
+}
+#toast_timerline {
+	height: 3px;
+	border-radius: 0.5rem;
+}
+
+/** DIALOG **/
+#dialog {
+	position: fixed;
+	top: 0;bottom: 0;
+	left: 0;right: 0;
+	margin: auto;
+	border-radius: 1rem;
+	padding: 8px;
+	width: 80%;
+	height: fit-content;
+	z-index: 3030 !important;
+	box-shadow: 0 0 6px var(--color-gray-low);
+}
+#dialog.show {
+	visibility: visible;
+	animation: fadeDown 300ms , fadeUp 800ms;
+}
+#dialog.hide {
+	visibility: hidden;
+	animation: fadeUp 300ms , fadeDown 800ms;
+}
+#dialog_header, #dh_rightside, #dialog_footer {
+	display: flex;
+}
+#dh_leftside, #df_leftside {
+	margin-right: auto;
+}
+#dialog_icon,#dialog_title {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+#dialog_icon {
+	padding: 3px 0 0 5px;
+	color: var(--color-contrast)!important;
+}
+#dialog_line {
+	height: 2px;
+	width: 99%;
+	margin: 8px auto;
+	border-radius: 8px;
+}
+#dialog_content {
+	font-size: 13px;
+	overflow-y: scroll;
+	margin: 0 4px 15px 4px;
+	padding: 0 10px 10px 10;
+	max-height: 450px;
+}
+#dialogbtn_hide {
+	padding: 3px 6px;
+}
+.bi-x {
+	color: white !important;
+}
+.btn-dialog {
+	margin: 4px;
+	padding: 4px;
+	font-size: 15px;
+	border-radius: 0.5rem;
+}
+.btn-dialog-success {
+	color: var(--color-green-strong);
+	background: var(--color-green-low);
+}
+.btn-dialog-info {
+	color: white!important;
+	background: var(--color-bluegray);
+}
+.btn-dialog-danger {
+	color: var(--color-red-strong);
+	background: var(--color-red-low);
+}
+.btn-dialog-warning {
+	color: var(--color-amber-strong);
+	background: var(--color-amber-low);
+}
+
+/** ANIMATIONS **/
+@keyframes fadeUp {
+	from {
+		opacity: 0;
+	}
+	to {
+		transform: translateY(-5px);
+		opacity: 1;
+	}
+}
+@keyframes hideDown {
+	from {
+		opacity: 1;
+	}
+	to {
+		transform: translateY(5px);
+		opacity: 0;
+	}
+}
+@keyframes shake {
+	25% {transform: translateX(4px)}
+	50% {transform: translateX(-4px)}
+	75% {transform: translateX(4px)}
+}
+@keyframes gradient {
+	0% {background-position: 0 50%}
+	50% {background-position: 100% 50%}
+	100% {background-position: 0 50%}
+}

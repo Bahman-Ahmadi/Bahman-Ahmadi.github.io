@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>MobiLearn - Learn by mobile</title>
+		<meta name="viewport" content="width=device-width"/>
+		<meta rel="icon" href="dist/assets/logo.png" type="image/png" />
+		<meta name="theme-color" content="#2962FF">
+		<meta name="msapplication-navbutton-color" content="#2962FF">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#2962FF">
+
+		<link rel="stylesheet" href="dist/lib/bootstrap5/bootstrap-icons.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="dist/lib/bootstrap5/bootstrap5.min.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="dist/css/index.css" type="text/css" media="all" />
+		<link rel="stylesheet" href="dist/css/course.css" type="text/css" media="all" />
+	</head>
+	<body>
+		<br>
+
+		<!-- INFORMATIONS -->
+		<div class="course">
+			<img alt="[BANNER]" class="course-thumbnail">
+			<div class="course-texts d-flex">
+				<div class="course-texts-header d-flex">
+					<div class="course-title-master">
+						<p class="course-title bold"></p>
+						<p class="bi bi-person course-master"></p>
+					</div>
+					<div class="course-subactions d-flex">
+						<button class="btn report-btn" onclick="showReport();"><i class="bi bi-exclamation-triangle"></i></button>
+						<button class="btn share-btn" onclick="shareCourse();"><i class="bi bi-share"></i></button>
+					</div>
+				</div>
+			</div>
+			<div class="course-credit">
+				<div class="cc-price d-flex">
+					<p class="cc-title"><i class="bi bi-cash-stack"></i> قیمت دوره: </p>
+					<div class="cc-value d-flex">
+						<p class="cc-price-real"></p>
+						<p class="cc-price-off"></p>
+						<p class="cc-price-type">تومان</p>
+					</div>
+				</div>
+				<div class="line"></div>
+				<div class="cc-title d-flex"><i class="bi bi-person cc-glyph"></i> مدرس: <p class="cc-value course-master"></p> <a href="" class="cc-master-cv">(رزومه)</a></div>
+				<div class="cc-title d-flex"><i class="bi bi-people cc-glyph"></i> تعداد دانشجویان: <p class="cc-value course-students"></p></div>
+				<div class="cc-title d-flex"><i class="bi bi-camera-video cc-glyph"></i> تعداد ویدیوها: <p class="cc-value course-videos"></p></div>
+				<div class="cc-title d-flex"><i class="bi bi-clock cc-glyph"></i> مدت زمان: <p class="cc-value course-time"></p></div>
+				<div class="cc-title d-flex"><i class="bi bi-layers cc-glyph"></i> سطح دوره: <p class="cc-value course-level"></p></div>
+				<div class="cc-title d-flex"><i class="bi bi-info-circle-fill cc-glyph"></i> وضعیت برگزاری: <p class="cc-value course-status"></p></div>
+				<div class="cc-title d-flex"><i class="bi bi-calendar cc-glyph"></i> تاریخ آخرین بروزرسانی: <p class="cc-value course-lastupdate"></p></div>
+				<div class="cc-title d-flex"><i class="bi bi-link cc-glyph"></i> لینک کوتاه: <p class="cc-value course-link"></p> <button class="btn btn-copylink" onclick="copylink();"><i class="bi bi-clipboard-plus"></i></button></div>
+
+				<div class="btn-pay-container">
+					<button class="btn btn-pay" onclick="courseRegister();">پرداخت و ثبت‌نام</button>
+				</div>
+			</div>
+			<div class="course-description-container">
+				<p class="course-description"></p>
+			</div>
+			<button class="btn btn-show-more" onclick="showFullDescription(this);"><i class="bi bi-caret-down"></i> توضیحات بیشتر</button>
+		</div>
+
+		<br>
+
+		<!-- DOWNLOAD BOX -->
+		<div class="dlbox">
+			<div class="dlbox-header d-flex">
+				<div class="dlbox-header-rightside">
+					<div class="dlbox-title bold"><i class="bi bi-arrow-down-circle-fill"></i> دانلود باکس</div>
+					<p class="dlbox-subinfo"></p>
+				</div>
+				<div class="dlbox-header-leftside"><button class="btn btn-download-all bi bi-download" onclick="downloadAll();"></button></div>
+
+			</div>
+			<div class="comment-line"></div>
+			<div class="downloads"></div>
+		</div>
+
+		<br>
+
+		<!-- COMMENTS -->
+		<div class="course-session course-comments">
+			<div class="course-session-header d-flex">
+				<div class="course-session-header-rightside">
+					<p class="course-session-title bold"><i class="bi bi-chat"></i> نظرات دوره</p>
+					<div class="course-session-details d-flex">
+						<p class="course-comments-count" id="comments_count"></p>
+						<p class="course-comments-stars" id="stars"></p>
+					</div>
+				</div>
+				<div class="course-session-header-leftside">
+					<button class="btn btn-sort" onclick="showFilterComments();"><i class="bi bi-funnel-fill"></i></button>
+					<button class="btn btn-addComment" onclick="makeNewComment();"><i class="bi bi-plus"></i></button>
+				</div>
+			</div>
+			<div class="comment-line"></div>
+			<br>
+			<div class="course-comments-container" id="comments"></div>
+		</div>
+
+		<br>
+
+		<!-- QUIZZES -->
+		<div class="course-session course-quizzes course-comments">
+			<div class="course-session-header d-flex">
+				<div class="course-session-header-rightside">
+					<p class="course-session-title bold"><i class="bi bi-question-circle"></i> سوالات دوره</p>
+					<div class="course-session-details d-flex">
+						<p class="course-comments-count" id="qa_nums"></p>
+						<p class="course-comments-stars" id="qa_percent"></p>
+					</div>
+				</div>
+				<div class="course-session-header-leftside">
+					<button class="btn btn-sort" onclick="showFilterQuizzes();"><i class="bi bi-funnel-fill"></i></button>
+					<button class="btn btn-addComment" onclick="makeNewQA();"><i class="bi bi-plus"></i></button>
+				</div>
+			</div>
+			<div class="comment-line"></div>
+			<br>
+			<div class="course-comments-container" id="quizzes"></div>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+
+
+		<!-- Float Action Button (FAB) -->
+		<button class="btn fab" id="fab" onclick="bookmark(this);"><i class="bi bi-bookmark fab-ic"></i></button>
+
+		<!-- BOTTOM NAVIGATION -->
+		<nav class="navbar fixed-bottom menubar">
+			<div class="item" id="index">
+				<i class="bi bi-house menu-ic"></i> <br>
+				خانه
+			</div>
+			<div class="item" id="search">
+				<i class="bi bi-search menu-ic"></i> <br>
+				جستجو
+			</div>
+			<div class="item" id="bookmarks">
+				<i class="bi bi-bookmarks menu-ic"></i> <br>
+				برگزیده‌ها
+			</div>
+			<div class="item" id="user">
+				<i class="bi bi-person menu-ic"></i> <br>
+				پروفایل
+			</div>
+		</nav>
+
+		<script src="dist/js/global.js" type="text/javascript" charset="utf-8"></script>
+		<script src="dist/js/course.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

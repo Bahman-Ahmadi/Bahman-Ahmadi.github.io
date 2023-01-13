@@ -1,0 +1,42 @@
+@import url('./vars.css');
+
+:root {
+	--color-primary-low: #0D47A1;
+	--color-primary-light: #0D47A1;
+	--color-primary: #2962FF;
+	--color-primary-strong: #2962FF /*#e8eaf6*/;
+
+	--color-gray-low: #212121;
+	--color-gray: #727272 /*#1f1f1f*/;
+	--color-gray-strong: #727272;
+
+	--color-white-low: #111111;
+	--color-white: #000000;
+	--color-white-strong: #323232;
+
+	--color-contrast: #ffffff;
+
+	--color-green-low: #2E7D32;
+	--color-green: #00C853/*#E8F5E9*/;
+	--color-green-strong: #00C853;
+
+	--color-red-low: #8c0a0a;
+	--color-red: #D50000/*#ffebee*/;
+	--color-red-strong: #D50000;
+	
+	--color-amber-low: #ff6f00;
+	--color-amber: #ffab00 /*#fff8e1*/;
+	--color-amber-strong: #ffab00;
+	
+	--color-violet-low: #f3e5f5;
+	--color-violet: #8e24aa;
+	--color-violet-strong: #4a148c;
+	
+	--color-bluegray-low: #eceff1;
+	--color-bluegray: #455a64;
+	--color-bluegray-strong: #263238;
+}
+
+.category {
+	box-shadow: none!important;
+}
