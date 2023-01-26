@@ -48,7 +48,7 @@
 	background: transparent;
 }
 #toast_btn:hover {
-	backdrop-filter: brightness(60%);
+	background: var(--color-white-strong);
 	padding: 3px;
 	border-radius: 0.5rem;
 }
@@ -105,6 +105,17 @@
 	padding: 0 10px 10px 10;
 	max-height: 450px;
 }
+.dialog-field {
+	width: 90%;
+	padding: 8px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	outline: none;
+	background: transparent !important;
+	color: var(--color-contrast)!important;
+	border: 1px solid var(--color-gray-low);
+}
 #dialogbtn_hide {
 	padding: 3px 6px;
 }
@@ -132,6 +143,38 @@
 .btn-dialog-warning {
 	color: var(--color-amber-strong);
 	background: var(--color-amber-low);
+}
+
+/** NEUMORPHISM **/
+.outer-neumorphism {
+	background: var(--color-white)!important;
+	box-shadow: -1.5px 1.5px 3px var(--color-neu-low),
+				1.5px -1.5px 3px var(--color-neu) !important;
+}
+.inner-neumorphism {
+	background: var(--color-white)!important;
+	box-shadow: inset 5px 5px 10px var(--color-neu-low),
+				inset -5px -5px 10px var(--color-neu) !important;
+}
+
+/* chart customization */
+.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
+	stroke: var(--color-primary)!important;
+	stroke-width: 3px!important;
+}
+.ct-grid, .ct-point, .ct-label {
+	color: var(--color-contrast)!important;
+	stroke: var(--color-gray-low)!important;
+}
+.chart-state {
+	color: var(--color-primary-low);
+	font-family: "vazir"!important;
+}
+.ct-label {
+	font-size: 8px;
+	width: fit-content !important;
+	padding: 0!important;
+	margin: 0!important;
 }
 
 /** ANIMATIONS **/
@@ -162,4 +205,12 @@
 	0% {background-position: 0 50%}
 	50% {background-position: 100% 50%}
 	100% {background-position: 0 50%}
+}
+@keyframes loading {
+	0% {
+		transform: skewX(-10deg) translateX(-100%);
+	}
+	100% {
+		transform: skewX(-10deg) translateX(200%);
+	}
 }

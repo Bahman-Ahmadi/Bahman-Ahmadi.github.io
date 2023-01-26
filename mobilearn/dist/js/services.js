@@ -1,5 +1,3 @@
-// import {LineChart} from "../lib/chartist.min.js";
-
 var usersProducts = () => {
 	dialog(
 		[
@@ -152,7 +150,7 @@ var requestCourse = () => {
 						"type": "success",
 						"id": "Done",
 						"text": "ارسال",
-						"event": `requestingCourse(document.getElementById("request").value); document.getElementById("dialogbtn_hide").click();`
+						"event": `requestingCourse(document.getElementById("request").value);`
 					}
 				]
 			]
@@ -161,6 +159,8 @@ var requestCourse = () => {
 };
 var requestingCourse = (course) => {
 	// todo: send XHR for announcing wanted course
+	document.getElementById("dialogbtn_hide").click();
+	successToast("درخواست شما ابلاغ شد");
 	console.log(course);
 };
 

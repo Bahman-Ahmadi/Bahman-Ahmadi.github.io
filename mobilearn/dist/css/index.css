@@ -1,3 +1,5 @@
+@import url('./vars.css');
+
 * {
 	transition: .3s ease-in-out;
 	color: var(--color-contrast);

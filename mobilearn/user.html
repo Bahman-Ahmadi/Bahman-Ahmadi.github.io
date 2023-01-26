@@ -56,7 +56,7 @@
 		<div class="cart-session bold"><i class="bi bi-cart"></i> سبد خرید</div>
 		<div class="cart">
 			<div class="my-courses">
-				<div class="my-course d-flex">
+				<div class="my-course d-flex" id="course_COURSE-ID">
 					<div class="my-course-rightside d-flex">
 						<img class="my-course-thumbnail" src="dist/assets/banner.jpg" alt="thumbnail"/>
 						<div class="my-course-texts">
@@ -65,10 +65,11 @@
 						</div>
 					</div>
 					<div class="my-course-leftside d-flex">
-						<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="goto(Links.course+'<COURSE-ID>');"></button>
+						<button class="bi bi-trash btn btn-delete-mycourse" onclick="deleteCart('COURSE-ID');"></button>
+						<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="buy('COURSE-ID');"></button>
 					</div>
 				</div>
-				<div class="my-course d-flex">
+				<div class="my-course d-flex" id="course_COURSE-ID2">
 					<div class="my-course-rightside d-flex">
 						<img class="my-course-thumbnail" src="dist/assets/banner.jpg" alt="thumbnail"/>
 						<div class="my-course-texts">
@@ -77,10 +78,11 @@
 						</div>
 					</div>
 					<div class="my-course-leftside d-flex">
-						<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="goto(Links.course+'<COURSE-ID>');"></button>
+						<button class="bi bi-trash btn btn-delete-mycourse" onclick="deleteCart('COURSE-ID2');"></button>
+						<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="buy('COURSE-ID');"></button>
 					</div>
 				</div>
-				<div class="my-course d-flex">
+				<div class="my-course d-flex" id="course_COURSE-ID3">
 					<div class="my-course-rightside d-flex">
 						<img class="my-course-thumbnail" src="dist/assets/banner.jpg" alt="thumbnail"/>
 						<div class="my-course-texts">
@@ -89,7 +91,8 @@
 						</div>
 					</div>
 					<div class="my-course-leftside d-flex">
-						<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="goto(Links.course+'<COURSE-ID>');"></button>
+						<button class="bi bi-trash btn btn-delete-mycourse" onclick="deleteCart('COURSE-ID3');"></button>
+						<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="buy('COURSE-ID');"></button>
 					</div>
 				</div>
 			</div>
@@ -102,7 +105,7 @@
 
 
 		<!-- Float Action Button (FAB) -->
-		<button class="btn fab"><i class="bi bi-headphones fab-ic"></i></button>
+		<button class="btn fab" onclick="support();"><i class="bi bi-headphones fab-ic"></i></button>
 
 		<!-- BOTTOM NAVIGATION -->
 		<nav class="navbar fixed-bottom menubar">

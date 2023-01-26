@@ -29,8 +29,8 @@
 				</div>
 			</div>
 			<div class="prof-leftside d-flex">
-				<button class="btn prof-btnedit"><i class="bi bi-pencil"></i></button>
-				<button class="btn prof-btnshownotifs"><i class="bi bi-bell"></i></button>
+				<button class="btn prof-btnedit" onclick="showEditProfile();"><i class="bi bi-pencil"></i></button>
+				<button class="btn prof-btnshownotifs" onclick="showNotifs();"><i class="bi bi-bell"></i></button>
 			</div>
 		</div>
 
@@ -42,16 +42,113 @@
 				<div class="shortcut shortcut3" id="likedposts" onclick="showLikedPosts();"><i class="bi bi-heart-fill"></i> مطالب محبوب</div>
 			</div>
 			<div class="shortcut-col d-flex">
-				<div class="shortcut shortcut4" id="interactions" onclick="showInteractions();"><i class="bi bi-chat-text-fill"></i> تعاملات</div>
-				<div class="shortcut shortcut5" id="mycourses" onclick="showMyCourses();"><i class="bi bi-camera-video-fill"></i> دوره‌ها</div>
+				<div class="shortcut shortcut4" id="interactions" onclick="support();"><i class="bi bi-chat-text-fill"></i> پشتیبانی</div>
+				<div class="shortcut shortcut5" id="cart" onclick="showCart();"><i class="bi bi-cart2"></i> سبد خرید</div>
 				<div class="shortcut shortcut6" id="statistics" onclick="showStatistics();"><i class="bi bi-graph-up"></i> آمار</div>
 			</div>
 		</div>
 		<div onclick="goto('services.html');" class="goto-services">مشاهده همه خدمات</div>
 
+		<br>
+
+		<!-- MY COURSES -->
+		<div class="cart-session bold"><i class="bi bi-camera-video"></i> دوره‌های من </div>
+		<div class="mycourses">
+			<div class="mycourse d-flex">
+				<div class="mycourse-rightside d-flex">
+					<div class="thumbnail-container">
+						<img class="mycourse-thumbnail" src="dist/assets/banner.jpg" alt="[BANNER]"/>
+					</div>
+					<div class="texts-container">
+						<p class="mycourse-name">آموزش گیت و گیت‌هاب</p>
+						<p class="mycourse-parts">۱۳ قسمت</p>
+					</div>
+				</div>
+				<div class="mycourse-leftside">
+					<div class="mycourse-upbtns d-flex">
+						<button class="bi bi-upload btn btn-upload" onclick="showUpload('COURSE-ID');"></button>
+						<button class="bi bi-trash btn btn-delete" onclick="showDeleteCourse('COURSE-ID');"></button>
+					</div>
+					<div class="mycourse-downbtns d-flex">
+						<button class="bi bi-share btn btn-share" onclick="shareCourse('آموزش گیت و گیت هاب', 'بهمن احمدی', 'http://l.bit.ir/ml?id=COURSE-ID');"></button>
+						<button class="bi bi-eye btn btn-show" onclick="goto(Links.course + 'COURSE-ID');"></button>
+					</div>
+				</div>
+			</div>
+			<div class="mycourse d-flex">
+				<div class="mycourse-rightside d-flex">
+					<div class="thumbnail-container">
+						<img class="mycourse-thumbnail" src="dist/assets/banner.jpg" alt="[BANNER]"/>
+					</div>
+					<div class="texts-container">
+						<p class="mycourse-name">آموزش گیت و گیت‌هاب</p>
+						<p class="mycourse-parts">۱۳ قسمت</p>
+					</div>
+				</div>
+				<div class="mycourse-leftside">
+					<div class="mycourse-upbtns d-flex">
+						<button class="bi bi-upload btn btn-upload" onclick="showUpload('COURSE-ID');"></button>
+						<button class="bi bi-trash btn btn-delete" onclick="showDeleteCourse('COURSE-ID');"></button>
+					</div>
+					<div class="mycourse-downbtns d-flex">
+						<button class="bi bi-share btn btn-share" onclick="shareCourse('آموزش گیت و گیت هاب', 'بهمن احمدی', 'http://l.bit.ir/ml?id=COURSE-ID');"></button>
+						<button class="bi bi-eye btn btn-show" onclick="goto(Links.course + 'COURSE-ID');"></button>
+					</div>
+				</div>
+			</div>
+			<div class="mycourse d-flex">
+				<div class="mycourse-rightside d-flex">
+					<div class="thumbnail-container">
+						<img class="mycourse-thumbnail" src="dist/assets/banner.jpg" alt="[BANNER]"/>
+					</div>
+					<div class="texts-container">
+						<p class="mycourse-name">آموزش گیت و گیت‌هاب</p>
+						<p class="mycourse-parts">۱۳ قسمت</p>
+					</div>
+				</div>
+				<div class="mycourse-leftside">
+					<div class="mycourse-upbtns d-flex">
+						<button class="bi bi-upload btn btn-upload" onclick="showUpload('COURSE-ID');"></button>
+						<button class="bi bi-trash btn btn-delete" onclick="showDeleteCourse('COURSE-ID');"></button>
+					</div>
+					<div class="mycourse-downbtns d-flex">
+						<button class="bi bi-share btn btn-share" onclick="shareCourse('آموزش گیت و گیت هاب', 'بهمن احمدی', 'http://l.bit.ir/ml?id=COURSE-ID');"></button>
+						<button class="bi bi-eye btn btn-show" onclick="goto(Links.course + 'COURSE-ID');"></button>
+					</div>
+				</div>
+			</div>
+			<div class="mycourse d-flex">
+				<div class="mycourse-rightside d-flex">
+					<div class="thumbnail-container">
+						<img class="mycourse-thumbnail" src="dist/assets/banner.jpg" alt="[BANNER]"/>
+					</div>
+					<div class="texts-container">
+						<p class="mycourse-name">آموزش گیت و گیت‌هاب</p>
+						<p class="mycourse-parts">۱۳ قسمت</p>
+					</div>
+				</div>
+				<div class="mycourse-leftside">
+					<div class="mycourse-upbtns d-flex">
+						<button class="bi bi-upload btn btn-upload" onclick="showUpload('COURSE-ID');"></button>
+						<button class="bi bi-trash btn btn-delete" onclick="showDeleteCourse('COURSE-ID');"></button>
+					</div>
+					<div class="mycourse-downbtns d-flex">
+						<button class="bi bi-share btn btn-share" onclick="shareCourse('آموزش گیت و گیت هاب', 'بهمن احمدی', 'http://l.bit.ir/ml?id=COURSE-ID');"></button>
+						<button class="bi bi-eye btn btn-show" onclick="goto(Links.course + 'COURSE-ID');"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
 
 		<!-- Float Action Button (FAB) -->
-		<button class="btn fab"><i class="bi bi-plus"></i></button>
+		<button class="btn fab" onclick="newCourse();"><i class="bi bi-plus"></i></button>
 
 		<!-- BOTTOM NAVIGATION -->
 		<nav class="navbar fixed-bottom menubar">
@@ -73,6 +170,7 @@
 			</div>
 		</nav>
 
+		<script src="dist/lib/chartist/chartist.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="dist/js/global.js" type="text/javascript" charset="utf-8"></script>
 		<script src="dist/js/admin.js" type="text/javascript" charset="utf-8"></script>
 	</body>

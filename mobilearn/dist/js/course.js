@@ -7,7 +7,7 @@ if (courseID == "undefined") {
 // todo : use XHR for getting course info by courseID
 var course = {
 	"id": courseID,
-	"thumb": "dist/assets/article.jpg",
+	"thumb": "dist/assets/banner.jpg",
 	"name": "آموزش کاربردی گیت و گیت‌هاب",
 	"master": "بهمن احمدی",
 	"master_cv": "https://github.com/Bahman-Ahmadi",
@@ -16,7 +16,152 @@ var course = {
 		"after_discount": persianizeNums(separatingNums("259600"))
 	},
 	"students": 500,
-	"videos": 10,
+	"videos": [
+		{
+			"title": "معرفی دوره",
+			"time": "0:10:20",
+			"size": 136,
+			"quality": 480,
+			"isLocked": true
+		},
+		{
+			"title": "معرفی دوره",
+			"time": "0:10:20",
+			"size": 136,
+			"quality": 480,
+			"isLocked": false
+		},
+		{
+			"title": "معرفی دوره",
+			"time": "0:10:20",
+			"size": 136,
+			"quality": 480,
+			"isLocked": true
+		},
+		{
+			"title": "معرفی دوره",
+			"time": "0:10:20",
+			"size": 136,
+			"quality": 480,
+			"isLocked": false
+		},
+		{
+			"title": "معرفی دوره",
+			"time": "0:10:20",
+			"size": 136,
+			"quality": 480,
+			"isLocked": true
+		},
+	],
+	"comments": [
+		{
+			"id": "1",
+			"thumbnail": "dist/assets/user.png",
+			"name": "بهمن احمدی",
+			"date": "1401/10/18 02:00",
+			"stars": 4,
+			"likes": 18,
+			"dislikes": 10,
+			"text": "لورم ایپسوم ".repeat(40),
+			"replies": [
+				{
+					"id": "1-1",
+					"thumbnail": "dist/assets/admin.png",
+					"name": "بهمن احمدی",
+					"date": "1401/10/19 03:00",
+					"likes": 10,
+					"dislikes": 18,
+					"text": "لورم ایپسوم ".repeat(20),
+					"replies": [
+						{
+							"id": "1-1-1",
+							"thumbnail": "dist/assets/user.png",
+							"name": "بهمن احمدی",
+							"date": "1401/10/20 04:00",
+							"likes": 10,
+							"dislikes": 18,
+							"text": "لورم ایپسوم ".repeat(10),
+							"replies": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "2",
+			"thumbnail": "dist/assets/user.png",
+			"name": "بهمن احمدی",
+			"date": "1401/10/21 05:00",
+			"stars": 5,
+			"likes": 18,
+			"dislikes": 10,
+			"text": "لورم ایپسوم ".repeat(40),
+			"replies": []
+		},
+		{
+			"id": "3",
+			"thumbnail": "dist/assets/user.png",
+			"name": "بهمن احمدی",
+			"date": "1401/10/22 06:00",
+			"stars": 1,
+			"likes": 18,
+			"dislikes": 10,
+			"text": "لورم ایپسوم ".repeat(40),
+			"replies": []
+		},
+	],
+	"quizzes": [
+		{
+			"id": "1",
+			"thumbnail": "dist/assets/user.png",
+			"name": "بهمن احمدی",
+			"type": "important",
+			"date": "1401/10/22 17:33",
+			"text": "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
+			"answers": [
+				{
+					"id": "1-1",
+					"thumbnail": "dist/assets/admin.png",
+					"name": "بهمن احمدی",
+					"date": "1401/10/22 17:34",
+					"likes": 10,
+					"dislikes": 5,
+					"text": "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
+					"answers": [
+						{
+							"id": "1-1-1",
+							"thumbnail": "dist/assets/admin.png",
+							"name": "بهمن احمدی",
+							"date": "1401/10/22 17:34",
+							"likes": 30,
+							"dislikes": 5,
+							"text": "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
+							"answers": []
+						}
+					]
+				},
+				{
+					"id": "1-2",
+					"thumbnail": "dist/assets/admin.png",
+					"name": "بهمن احمدی",
+					"date": "1401/10/22 17:34",
+					"likes": 11,
+					"dislikes": 4,
+					"text": "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
+					"answers": []
+				}
+			],
+		},
+		{
+			"id": "2",
+			"thumbnail": "dist/assets/user.png",
+			"name": "بهمن احمدی",
+			"type": "middle",
+			"date": "1401/10/22 17:40",
+			"text": "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
+			"answers": []
+		}
+	],
 	"time": "6:37:00",
 	"level": "پیشرفته",
 	"status": "در حال برگزاری",
@@ -24,153 +169,6 @@ var course = {
 	"shortlink": Links.shortlinks + courseID,
 	"description": "لورم ایپسوم ".repeat(100)
 };
-var videos = [
-	{
-		"title": "معرفی دوره",
-		"time": "0:10:20",
-		"size": 136,
-		"quality": 480,
-		"isLocked": true
-	},
-	{
-		"title": "معرفی دوره",
-		"time": "0:10:20",
-		"size": 136,
-		"quality": 480,
-		"isLocked": false
-	},
-	{
-		"title": "معرفی دوره",
-		"time": "0:10:20",
-		"size": 136,
-		"quality": 480,
-		"isLocked": true
-	},
-	{
-		"title": "معرفی دوره",
-		"time": "0:10:20",
-		"size": 136,
-		"quality": 480,
-		"isLocked": false
-	},
-	{
-		"title": "معرفی دوره",
-		"time": "0:10:20",
-		"size": 136,
-		"quality": 480,
-		"isLocked": true
-	},
-];
-var comments = [
-	{
-		"id": "1",
-		"thumbnail": "dist/assets/user.png",
-		"name": "بهمن احمدی",
-		"date": "1401/10/18 02:00",
-		"stars": 4,
-		"likes": 18,
-		"dislikes": 10,
-		"text": "لورم ایپسوم ".repeat(40),
-		"replies": [
-			{
-				"id": "1-1",
-				"thumbnail": "dist/assets/admin.png",
-				"name": "بهمن احمدی",
-				"date": "1401/10/19 03:00",
-				"likes": 10,
-				"dislikes": 18,
-				"text": "لورم ایپسوم ".repeat(20),
-				"replies": [
-					{
-						"id": "1-1-1",
-						"thumbnail": "dist/assets/user.png",
-						"name": "بهمن احمدی",
-						"date": "1401/10/20 04:00",
-						"likes": 10,
-						"dislikes": 18,
-						"text": "لورم ایپسوم ".repeat(10),
-						"replies": []
-					}
-				]
-			}
-		]
-	},
-	{
-		"id": "2",
-		"thumbnail": "dist/assets/user.png",
-		"name": "بهمن احمدی",
-		"date": "1401/10/21 05:00",
-		"stars": 5,
-		"likes": 18,
-		"dislikes": 10,
-		"text": "لورم ایپسوم ".repeat(40),
-		"replies": []
-	},
-	{
-		"id": "3",
-		"thumbnail": "dist/assets/user.png",
-		"name": "بهمن احمدی",
-		"date": "1401/10/22 06:00",
-		"stars": 1,
-		"likes": 18,
-		"dislikes": 10,
-		"text": "لورم ایپسوم ".repeat(40),
-		"replies": []
-	},
-];
-
-var quizzes = [
-	{
-		"id": "1",
-		"thumbnail": "dist/assets/user.png",
-		"name": "بهمن احمدی",
-		"type": "important",
-		"date": "1401/10/22 17:33",
-		"text": "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
-		"answers": [
-			{
-				"id": "1-1",
-				"thumbnail": "dist/assets/admin.png",
-				"name": "بهمن احمدی",
-				"date": "1401/10/22 17:34",
-				"likes": 10,
-				"dislikes": 5,
-				"text": "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
-				"answers": [
-					{
-						"id": "1-1-1",
-						"thumbnail": "dist/assets/admin.png",
-						"name": "بهمن احمدی",
-						"date": "1401/10/22 17:34",
-						"likes": 30,
-						"dislikes": 5,
-						"text": "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
-						"answers": []
-					}
-				]
-			},
-			{
-				"id": "1-2",
-				"thumbnail": "dist/assets/admin.png",
-				"name": "بهمن احمدی",
-				"date": "1401/10/22 17:34",
-				"likes": 11,
-				"dislikes": 4,
-				"text": "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
-				"answers": []
-			}
-		],
-	},
-	{
-		"id": "2",
-		"thumbnail": "dist/assets/user.png",
-		"name": "بهمن احمدی",
-		"type": "middle",
-		"date": "1401/10/22 17:40",
-		"text": "لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم",
-		"answers": []
-	}
-];
 
 
 var setAttr = (className, attr, value) => {
@@ -189,7 +187,7 @@ if (course.price.before_discount != course.price.after_discount) {
 setAttr("cc-price-off", "innerHTML", course.price.after_discount);
 setAttr("cc-master-cv", "href", course.master_cv);
 setAttr("course-students", "innerHTML", persianizeNums(separatingNums(course.students))+" نفر");
-setAttr("course-videos", "innerHTML", persianizeNums(course.videos)+" ویدیو");
+setAttr("course-videos", "innerHTML", persianizeNums(course.videos.length)+" ویدیو");
 setAttr("course-time", "innerHTML", persianizeNums(course.time));
 setAttr("course-level", "innerHTML", course.level);
 setAttr("course-status", "innerHTML", course.status);
@@ -219,7 +217,7 @@ var showReport = () => {
 				"html": `
 <div class="report">
 لطفا توضیح دهید که چرا این مورد را خلاف قوانین میدانید:<br>
-<input type="text" id="report" placeholder="توضیحات بیشتری ارائه دهید..."/>
+<input class="dialog-field" type="text" id="report" placeholder="توضیحات بیشتری ارائه دهید..."/>
 </div>
 				`
 			},
@@ -284,12 +282,12 @@ var showFullDescription = (btn) => {
 // DOWNLOADS
 document.querySelectorAll(".downloads").forEach((dls) => {
 	var sumSize = 0;
-	for (var video of videos) {
+	for (var video of course.videos) {
 		sumSize += video.size;
 		dls.innerHTML += `
 <div class="download d-flex">
 	<div class="download-rightside d-flex">
-		<div class="download-number bold">${persianizeNums(videos.indexOf(video)+1)}</div>
+		<div class="download-number bold">${persianizeNums(course.videos.indexOf(video)+1)}</div>
 		<div class="download-texts">
 			<p class="download-title">${video.title}</p>
 			<div class="download-info d-flex">
@@ -301,8 +299,8 @@ document.querySelectorAll(".downloads").forEach((dls) => {
 		</div>
 	</div>
 	<div class="download-leftside d-flex">
-		<button class="btn btn-watch" onclick="goto(Links.watch+'${courseID}&index=${videos.indexOf(video)}');"><i class="bi bi-eye"></i></button>
-		<button class="btn btn-download" onclick="download(${videos.indexOf(video)});"><i class="bi bi-download"></i></button>
+		<button class="btn btn-watch" onclick="goto(Links.watch+'${courseID}&index=${course.videos.indexOf(video)}');"><i class="bi bi-eye"></i></button>
+		<button class="btn btn-download" onclick="download(${course.videos.indexOf(video)});"><i class="bi bi-download"></i></button>
 	</div>
 </div>
 		`;
@@ -364,14 +362,14 @@ function makeComment(comment) {
 
 // inserting json comments as html
 var stars = 0;
-document.getElementById("comments_count").innerHTML = `${persianizeNums(comments.length)} نظر`;
-for (var comment of comments) {
+document.getElementById("comments_count").innerHTML = `${persianizeNums(course.comments.length)} نظر`;
+for (var comment of course.comments) {
 	stars += comment.stars;
 	document.getElementById("comments").innerHTML += makeComment(comment);
 }
 
 // inserting stars average
-document.getElementById("stars").innerHTML = ` (${"<i class='bi bi-star-fill comment-star'></i>".repeat(stars/comments.length)}) `;
+document.getElementById("stars").innerHTML = ` (${"<i class='bi bi-star-fill comment-star'></i>".repeat(stars/course.comments.length)}) `;
 
 // filtering comments based on some criterion
 var showFilterComments = () => {
@@ -429,9 +427,9 @@ var showFilterComments = () => {
 var filterComments = (criterion) => {
 	document.getElementById("dialogbtn_hide").click();
 	// todo: use XHR to filter comments & valuing result into comment variable 
-	comments = [];
+	course.comments = [];
 	document.getElementById("comments").innerHTML = "";
-	for (var comment of comments) {
+	for (var comment of course.comments) {
 		stars += comment.stars;
 		document.getElementById("comments").innerHTML += makeComment(comment);
 	}
@@ -477,7 +475,7 @@ var dislikeComment = (ic, id) => {
 // reply and add comment
 var makeNewComment = (replyid=null) => {
 	if (replyid == null) {
-		id = comments.length+1+"";
+		id = course.comments.length+1+"";
 	}
 	dialog(
 		[
@@ -629,7 +627,7 @@ var loadQuizzes = (node) => {
 	return HTML + '</div></div>';
 };
 // nums & inserting loaded json into html
-for (var quiz of quizzes) {
+for (var quiz of course.quizzes) {
 	document.getElementById("quizzes").innerHTML += loadQuizzes(quiz);
 }
 var percent = (acount * 100) / qcount;
@@ -692,11 +690,11 @@ var showFilterQuizzes = () => {
 var filterQuizzes = (criterion) => {
 	document.getElementById("dialogbtn_hide").click();
 	// todo: use XHR to filter comments & valuing result into comment variable 
-	quizzes = [];
+	course.quizzes = [];
 	qcount = 0;
 	acount = 0;
 	document.getElementById("quizzes").innerHTML = "";
-	for (var quiz of quizzes) {
+	for (var quiz of course.quizzes) {
 		document.getElementById("quizzes").innerHTML += loadQuizzes(quiz);
 	}
 	percent = (acount * 100) / qcount;
@@ -707,7 +705,7 @@ var filterQuizzes = (criterion) => {
 // new quiz
 var makeNewQA = (replyid=null) => {
 	if (replyid == null) {
-		id = quizzes.length+1+"";
+		id = course.quizzes.length+1+"";
 	}
 	dialog(
 		[

@@ -30,9 +30,6 @@
 	background: var(--color-amber-low);
 	color: var(--color-amber);
 }
-input {
-	background: transparent!important;
-}
 
 /** SHORTCUTS **/
 .shortcuts {
@@ -130,17 +127,6 @@ input {
 	width: 100%;
 	text-align: center;
 }
-#name, #oldpass, #newpass, #cardnumber {
-	width: 90%;
-	padding: 8px;
-	margin-top: 8px;
-	border: none;
-	border-radius: 4px;
-	outline: none;
-	background: transparent;
-	color: var(--color-contrast)!important;
-	border: 1px solid var(--color-gray-low);
-}
 
 /** NOTIFICATIONS **/
 .notif {
@@ -162,6 +148,10 @@ input {
 }
 .notif-bottomside {
 	font-size: 11px;
+}
+.btn-download-mycourse {
+	background: var(--color-white-strong);
+	color: var(--color-contrast);
 }
 
 /** LIKED POSTS & MY COURSES **/
@@ -192,14 +182,19 @@ input {
 .liked-post-leftside, .my-course-leftside {
 	margin-left: 8px;
 }
-.btn-unlike-likedpost, .btn-goto-likedpost, .btn-goto-mycourse {
+.btn-unlike-likedpost, .btn-goto-likedpost,
+.btn-goto-mycourse, .btn-delete-mycourse {
 	height: fit-content;
 	width: fit-content;
-	margin: auto 0;
+	margin: auto 1px;
 }
 .btn-goto-likedpost, .btn-goto-mycourse {
 	background: var(--color-primary-low);
 	color: var(--color-primary-strong)!important;
+}
+.btn-delete-mycourse {
+	background: var(--color-red-low);
+	color: var(--color-red-strong);
 }
 .btn-unlike-likedpost {
 	margin-left: 5px;

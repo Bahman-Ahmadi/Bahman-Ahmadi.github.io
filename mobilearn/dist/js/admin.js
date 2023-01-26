@@ -1,7 +1,7 @@
 if (localStorage.getItem("mladmin") != null) {
 	// admin.html will load
 } else if (localStorage.getItem("mluser") != null) {
-	//goto("user.html");
+	goto("user.html");
 } else {
 	goto("register.html");
 }
@@ -26,7 +26,7 @@ var showEditProfile = () => {
 					"title": "ویرایش نمایه"
 				},
 				{
-					"element": "<button class='btn' id='dialogbtn_hide'><i class='bi bi-x'></i></button>"
+					"element": "<button class='btn bi bi-x' id='dialogbtn_hide'></button>"
 				}
 			],
 			"content": {
@@ -34,22 +34,22 @@ var showEditProfile = () => {
 <div class="edit-profile">
 	<p class="editprofile-info">مواردی را که می‌خواهید، تغییر دهید</p>
 	<div class="avatars">
-		<img src="dist/assets/user.png" class="avatar selected-avatar"/>
-		<img src="dist/assets/user.png" class="avatar"/>
-		<img src="dist/assets/user.png" class="avatar"/>
-		<img src="dist/assets/user.png" class="avatar"/>
-		<img src="dist/assets/user.png" class="avatar"/>
-		<img src="dist/assets/user.png" class="avatar"/>
-		<img src="dist/assets/user.png" class="avatar"/>
+		<img src="dist/assets/admin.png" class="avatar selected-avatar"/>
+		<img src="dist/assets/admin.png" class="avatar"/>
+		<img src="dist/assets/admin.png" class="avatar"/>
+		<img src="dist/assets/admin.png" class="avatar"/>
+		<img src="dist/assets/admin.png" class="avatar"/>
+		<img src="dist/assets/admin.png" class="avatar"/>
+		<img src="dist/assets/admin.png" class="avatar"/>
 		<form method="post" action="/upload" enctype="multipart/form-data">
 			<label class="add-avatar" for="myavatar"><i class="bi bi-plus-circle-dotted"></i></label>
 			<input type="file" name="myavatar" id="myavatar" hidden/>
 		</form>
 	</div>
 	<div class="inputs">
-		<input type="text" class="name-input" id="name" placeholder="نام و نام خانوادگی خود را وارد کنید"/><br>
-		<input type="password" class="oldpass-input" id="oldpass" placeholder="رمزعبور قدیمی"/>
-		<input type="password" class="newpass-input" id="newpass" placeholder="رمزعبور جدید"/>
+		<input type="text" class="dialog-field name-input" id="name" placeholder="نام و نام خانوادگی خود را وارد کنید"/><br>
+		<input type="password" class="dialog-field oldpass-input" id="oldpass" placeholder="رمزعبور قدیمی"/>
+		<input type="password" class="dialog-field newpass-input" id="newpass" placeholder="رمزعبور جدید"/>
 	</div>
 </div>
 				`
@@ -109,7 +109,7 @@ var showNotifs = () => {
 					"title": "اعلانات"
 				},
 				{
-					"element": "<button class='btn' id='dialogbtn_hide'><i class='bi bi-x'></i></button>"
+					"element": "<button class='btn bi bi-x' id='dialogbtn_hide'></button>"
 				}
 			],
 			"content": {
@@ -229,7 +229,7 @@ var showLikedPosts = () => {
 					"title": "مطالب محبوب"
 				},
 				{
-					"element": "<button class='btn' id='dialogbtn_hide'><i class='bi bi-x'></i></button>"
+					"element": "<button class='btn bi bi-x' id='dialogbtn_hide'></button>"
 				}
 			],
 			"content": {
@@ -315,7 +315,7 @@ var showWallet = () => {
 					"title": "کیف پول (۱۰,۰۰۰ تومان)"
 				},
 				{
-					"element": "<button class='btn' id='dialogbtn_hide'><i class='bi bi-x'></i></button>"
+					"element": "<button class='btn bi bi-x' id='dialogbtn_hide'></button>"
 				}
 			],
 			"content": {
@@ -435,14 +435,14 @@ function chargingPage() {
 					"title": "شارژ کیف‌پول"
 				},
 				{
-					"element": "<button class='btn' id='dialogbtn_hide'><i class='bi bi-x'></i></button>"
+					"element": "<button class='btn bi bi-x' id='dialogbtn_hide'></button>"
 				}
 			],
 			"content": {
 				"html": `
 <div class="charge-container">
 	<div class="charge-input-container d-flex">
-		<input type="number" id="payvalue" onkeyup="payValueController(this.value);" value="10000" placeholder="مقدار شارژ موردنظر را وارد کنید"/>
+		<input class="dialog-field" type="number" id="payvalue" onkeyup="payValueController(this.value);" value="10000" placeholder="مقدار شارژ موردنظر را وارد کنید"/>
 		<div class="charge-controllers">
 			<button class="bi bi-plus btn btn-increase-charge" onclick="payValueController(document.getElementById('payvalue').value*1 + 1000);"></button> <br>
 			<button class="bi bi-dash btn btn-decrease-charge" onclick="payValueController(document.getElementById('payvalue').value*1 - 1000);"></button>
@@ -508,12 +508,12 @@ function cashingPage() {
 					"title": "برداشت"
 				},
 				{
-					"element": "<button class='btn' id='dialogbtn_hide'><i class='bi bi-x'></i></button>"
+					"element": "<button class='btn bi bi-x' id='dialogbtn_hide'></button>"
 				}
 			],
 			"content": {
 				"html": `لطفا شماره‌کارت خود را وارد کنید<br>
-<input type="number" id="cardnumber" placeholder="شماره کارت ۱۶ رقمی"/><br>
+<input class="dialog-field" type="number" id="cardnumber" placeholder="شماره کارت ۱۶ رقمی"/><br>
 درخواست شما پس از وارد کردن شماره کارت و سپس لمس دکمه «تأیید» بررسی می‌شود.
 درصورتی که موجودی کیف‌پول شما کمتر از ۱۰۰ هزارتومان نباشد مقدار موجودی منهای ۱۰ درصد کارمزد، به حساب بانکی شما با شماره کارتی که در بالا وارد کرده‌اید، پس از حداقل ۳ روز کاری واریز خواهد شد.<br>
 <b>تذکر:</b> در وارد کردن شماره کارت دقت کنید در غیر این صورت مسئولیت هرگونه خطای احتمالی بر عهده ما نخواهد بود.`
@@ -564,7 +564,7 @@ var showMyCourses = () => {
 					"title": "دوره های من"
 				},
 				{
-					"element": "<button class='btn' id='dialogbtn_hide'><i class='bi bi-x'></i></button>"
+					"element": "<button class='btn bi bi-x' id='dialogbtn_hide'></button>"
 				}
 			],
 			"content": {
@@ -627,3 +627,330 @@ var showMyCourses = () => {
 	);
 };
 
+// show cart
+var showCart = () => {
+	dialog(
+		[
+			"var(--color-white);",
+			"var(--color-primary);",
+			"var(--color-gray-low);",
+			"var(--color-contrast);",
+		],
+		{
+			"header": [
+				{
+					"icon": "cart2",
+					"title": "سبد خرید"
+				},
+				{
+					"element": "<button class='btn bi bi-x' id='dialogbtn_hide'></button>"
+				}
+			],
+			"content": {
+				"html": `
+<div class="cart">
+	<div class="my-courses">
+		<div class="my-course d-flex" id="course_COURSE-ID">
+			<div class="my-course-rightside d-flex">
+				<img class="my-course-thumbnail" src="dist/assets/banner.jpg" alt="thumbnail"/>
+				<div class="my-course-texts">
+					<p class="my-course-title">عنوان</p>
+					<p class="bi bi-person my-course-author"> بهمن احمدی</p>
+				</div>
+			</div>
+			<div class="my-course-leftside d-flex">
+				<button class="bi bi-trash btn btn-delete-mycourse" onclick="deleteCart('COURSE-ID');"></button>
+				<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="buy('COURSE-ID');"></button>
+			</div>
+		</div>
+		<div class="my-course d-flex" id="course_COURSE-ID2">
+			<div class="my-course-rightside d-flex">
+				<img class="my-course-thumbnail" src="dist/assets/banner.jpg" alt="thumbnail"/>
+				<div class="my-course-texts">
+					<p class="my-course-title">عنوان</p>
+					<p class="bi bi-person my-course-author"> بهمن احمدی</p>
+				</div>
+			</div>
+			<div class="my-course-leftside d-flex">
+				<button class="bi bi-trash btn btn-delete-mycourse" onclick="deleteCart('COURSE-ID2');"></button>
+				<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="buy('COURSE-ID');"></button>
+			</div>
+		</div>
+		<div class="my-course d-flex" id="course_COURSE-ID3">
+			<div class="my-course-rightside d-flex">
+				<img class="my-course-thumbnail" src="dist/assets/banner.jpg" alt="thumbnail"/>
+				<div class="my-course-texts">
+					<p class="my-course-title">عنوان</p>
+					<p class="bi bi-person my-course-author"> بهمن احمدی</p>
+				</div>
+			</div>
+			<div class="my-course-leftside d-flex">
+				<button class="bi bi-trash btn btn-delete-mycourse" onclick="deleteCart('COURSE-ID3');"></button>
+				<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="buy('COURSE-ID');"></button>
+			</div>
+		</div>
+	</div>
+</div>
+				`
+			},
+			"footer": [
+				[],
+				[
+					{
+						"type": "success",
+						"id": "done",
+						"text": "حله",
+						"event": `document.getElementById("dialogbtn_hide").click();`
+					}
+				]
+			]
+		}
+	);
+};
+
+// delete from cart
+var deleteCart = (id) => {
+	console.log(id);
+	document.getElementById(`course_${id}`).remove();
+	// todo : send XHR for delete course from cart
+};
+
+// buy a course from cart
+var buy = (id) => {
+	// todo: send XHR for buy this course
+	// todo: check if There was enough money in the wallet pay from the wallet, else Inventory increase
+};
+
+// statistics
+var showStatistics = () => {
+	dialog(
+		[
+			"var(--color-white);",
+			"var(--color-primary);",
+			"var(--color-gray-low);",
+			"var(--color-contrast);"
+		],
+		{
+			"header": [
+				{
+					"icon": "graph-up",
+					"title": "آمار"
+				},
+				{
+					"element": "<button class='btn bi bi-x' id='dialogbtn_hide'></button>"
+				}
+			],
+			"content": {
+				"html": `
+<p class="chart-title">آمار مالی</p>
+<div class="ct-chart ct-perfect-fourth" id="chart1"></div>
+<p class="chart-title">آمار ثبت‌نام دوره‌ها</p>
+<div class="ct-chart ct-perfect-fourth" id="chart2"></div>
+				`
+			},
+			"footer": [
+				[],
+				[
+					{
+						"type": "success",
+						"id": "Done",
+						"text": "تأیید",
+						"event": `document.getElementById("dialogbtn_hide").click();`
+					}
+				]
+			]
+		}
+	);
+
+	new Chartist.Line('#chart1', {
+		labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+		series: [
+			[10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000, 110000, 120000]
+		]
+	});
+	new Chartist.Line('#chart2', {
+		labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+		series: [
+			[20, 70, 100, 110, 150, 150, 280, 300, 310, 310, 312, 320]
+		]
+	});
+};
+
+var support = () => {
+	// todo: set from righchat api
+};
+
+
+// Holding a new course
+var newCourse = () => {
+	dialog(
+		[
+			"var(--color-white);",
+			"var(--color-bluegray);",
+			"var(--color-gray-low);",
+			"var(--color-contrast);",
+		],
+		{
+			"header": [
+				{
+					"icon": "collection-play",
+					"title": "دورهٔ جدید"
+				},
+				{
+					"element": "<button class='btn bi bi-x' id='dialogbtn_hide'></button>"
+				}
+			],
+			"content": {
+				"html": `
+<div class="new-course">
+	<input class="dialog-field course-name" id="name" placeholder="نام دوره"/>
+	<input class="dialog-field course-level" id="level" placeholder="سطح دوره (مقدماتی/پیشرفته)"/>
+	<input type="number" class="dialog-field course-price" id="price" placeholder="قیمت دوره (در صورت رایگان بودن اینجا بنویسید 0)"/>
+</div>
+				`
+			},
+			"footer": [
+				[
+					{
+						"type": "info",
+						"id": "info",
+						"text": "راهنما",
+						"event": `showNewCourseHelp();`
+					}
+				],
+				[
+					{
+						"type": "danger",
+						"id": "cancel",
+						"text": "لغو",
+						"event": `document.getElementById("dialogbtn_hide").click();`
+					},
+					{
+						"type": "success",
+						"id": "Done",
+						"text": "بررسی",
+						"event": `makeCourse(document.getElementById("name").value, document.getElementById("level").value, document.getElementById("price").value);`
+					}
+				]
+			]
+		}
+	);
+};
+
+var showNewCourseHelp = () => {
+	infoDialog(
+		"راهنما",
+		`در قسمت نام دوره شما باید عنوان دوره‌ای که میخواهید برگزار کنید را به زبان فارسی بنویسید<br>
+در قسمت سطح دوره باید یکی از دوکلمهٔ مقدماتی یا پیشرفته را بنویسید. دقت داشته باشید که نمی‌توان در یک دوره هردو سطح مقدماتی و پیشرفته را تدریس کنید.<br>
+در قسمت قیمت دوره چنانچه میخواهید دوره را تماما رایگان برگزار کنید عدد 0 و در غیر این صورت مقدار قیمت موردنظر را به «تومان» وارد کنید. دقت داشته باشید که قیمتی منصفانه وارد کنید در غیر این صورت با برگزاری دوره شما مخالفت می‌شود.<br>
+با احترام`
+	);
+};
+
+var makeCourse = (name, level, price) => {
+	if ((level == "مقدماتی"  ||level == "پیشرفته") && parseInt(price) >= 0) {
+		document.getElementById("dialogbtn_hide").click();
+		successToast("دوره شما در دست بررسی است");
+		// todo: send XHR for submitting new course
+	} else {
+		errorToast("ورودی ها معتبر نیستند", (container) => {container.remove(); showNewCourseHelp()}, "راهنما");
+	}
+};
+
+// upload new part
+var showUpload = (id) => {
+	dialog(
+		[
+			"var(--color-white);",
+			"var(--color-primary);",
+			"var(--color-gray-low);",
+			"var(--color-contrast);",
+		],
+		{
+			"header": [
+				{
+					"icon": "camera-video",
+					"title": "قسمت جدید"
+				},
+				{
+					"element": "<button class='btn bi bi-x' id='dialogbtn_hide'></button>"
+				}
+			],
+			"content": {
+				"html": `
+<div class="new-part">
+	<form action="/newpart" method="post" accept-charset="utf-8">
+		<input type="hidden" name="course" value="${id}"/>
+		<input type="file" name="file"/>
+		<input class="dialog-field" name="title" placeholder="موضوع این قسمت چیست؟">
+		<div class="parttypes d-flex">
+			این قسمت رایگان است؟
+			<input type="button" class="part-type part-type-selected" value="بله"/>
+			<input type="button" class="part-type" value="نه"/>
+		</div>
+		<input type="hidden" id="lock" name="lock" value="yes"/>
+		<button type="submit" id="send" hidden></button>
+	</form>
+</div>
+				`
+			},
+			"footer": [
+				[],
+				[
+					{
+						"type": "danger",
+						"id": "cancel",
+						"text": "لغو",
+						"event": `document.getElementById("dialogbtn_hide").click();`
+					},
+					{
+						"type": "success",
+						"id": "Done",
+						"text": "بررسی",
+						"event": `document.getElementById("send").click(); document.getElementById("dialogbtn_hide").click();`
+					}
+				]
+			]
+		}
+	);
+	document.querySelectorAll(".part-type").forEach((el) => {
+		el.onclick = () => {
+			el.className = "part-type part-type-selected";
+			document.getElementsByClassName("part-type")[el.value == "بله" ? 1 : 0].className = "part-type";
+			document.getElementById("lock").value = el.value == "بله" ? "yes" : "no";
+		};
+	});
+};
+
+var showDeleteCourse = (id) => {
+	warnDialog(
+		"حذف دوره",
+		"آیا مطمئنید که می‌خواهید این دوره را حذف کنید؟<br>این عملیات غیرقابل بازگشت خواهد بود. ادامه می‌دهید؟",
+		"حذف",
+		[
+			'document.getElementById("dialogbtn_hide").click();',
+			`deleteCourse("${id}");`
+		]
+	);
+};
+
+var deleteCourse = (id) => {
+	document.getElementById("dialogbtn_hide").click();
+	// todo: send XHR to deleting the course
+	successToast("درخواست شما جهت تصمیم‌گیری ابلاغ شد");
+};
+
+var shareCourse = async (name, master, shortlink) => {
+	const shareData = {
+		title: name,
+		text: `${name}\nبا تدریس استاد ${master} را در «مبی‌لرن» بیاموزید :\n${shortlink}`,
+		url: shortlink
+	};
+
+	// Share must be triggered by "user activation"
+	try {
+		await navigator.share(shareData);
+	} catch (err) {
+		console.log(err);
+	}
+};

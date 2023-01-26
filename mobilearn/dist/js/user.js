@@ -1,9 +1,9 @@
-if (localStorage.getItem("mluser") == null) {
-	goto("register.html");
+if (localStorage.getItem("mluser") != null) {
+	// user.html will load
 } else if (localStorage.getItem("mladmin") != null) {
 	goto("admin.html");
 } else {
-	// user.html will load
+	goto("register.html");
 }
 
 // show different welcome messages by every load
@@ -47,9 +47,9 @@ var showEditProfile = () => {
 		</form>
 	</div>
 	<div class="inputs">
-		<input type="text" class="name-input" id="name" placeholder="نام و نام خانوادگی خود را وارد کنید"/><br>
-		<input type="password" class="oldpass-input" id="oldpass" placeholder="رمزعبور قدیمی"/>
-		<input type="password" class="newpass-input" id="newpass" placeholder="رمزعبور جدید"/>
+		<input type="text" class="dialog-field name-input" id="name" placeholder="نام و نام خانوادگی خود را وارد کنید"/><br>
+		<input type="password" class="dialog-field oldpass-input" id="oldpass" placeholder="رمزعبور قدیمی"/>
+		<input type="password" class="dialog-field newpass-input" id="newpass" placeholder="رمزعبور جدید"/>
 	</div>
 </div>
 				`
@@ -442,7 +442,7 @@ function chargingPage() {
 				"html": `
 <div class="charge-container">
 	<div class="charge-input-container d-flex">
-		<input type="number" id="payvalue" onkeyup="payValueController(this.value);" value="10000" placeholder="مقدار شارژ موردنظر را وارد کنید"/>
+		<input class="dialog-field" type="number" id="payvalue" onkeyup="payValueController(this.value);" value="10000" placeholder="مقدار شارژ موردنظر را وارد کنید"/>
 		<div class="charge-controllers">
 			<button class="bi bi-plus btn btn-increase-charge" onclick="payValueController(document.getElementById('payvalue').value*1 + 1000);"></button> <br>
 			<button class="bi bi-dash btn btn-decrease-charge" onclick="payValueController(document.getElementById('payvalue').value*1 - 1000);"></button>
@@ -513,7 +513,7 @@ function cashingPage() {
 			],
 			"content": {
 				"html": `لطفا شماره‌کارت خود را وارد کنید<br>
-<input type="number" id="cardnumber" placeholder="شماره کارت ۱۶ رقمی"/><br>
+<input class="dialog-field" type="number" id="cardnumber" placeholder="شماره کارت ۱۶ رقمی"/><br>
 درخواست شما پس از وارد کردن شماره کارت و سپس لمس دکمه «تأیید» بررسی می‌شود.
 درصورتی که موجودی کیف‌پول شما کمتر از ۱۰۰ هزارتومان نباشد مقدار موجودی منهای ۱۰ درصد کارمزد، به حساب بانکی شما با شماره کارتی که در بالا وارد کرده‌اید، پس از حداقل ۳ روز کاری واریز خواهد شد.<br>
 <b>تذکر:</b> در وارد کردن شماره کارت دقت کنید در غیر این صورت مسئولیت هرگونه خطای احتمالی بر عهده ما نخواهد بود.`
@@ -579,7 +579,7 @@ var showMyCourses = () => {
 			</div>
 		</div>
 		<div class="my-course-leftside d-flex">
-			<button class="bi bi-download btn btn-unlike-mycourse" onclick="download('<COURSE-ID>');"></button>
+			<button class="bi bi-download btn btn-download-mycourse" onclick="goto(Links.downloadAll + '<COURSE-ID>');"></button>
 			<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="goto(Links.course+'<COURSE-ID>');"></button>
 		</div>
 	</div>
@@ -592,7 +592,7 @@ var showMyCourses = () => {
 			</div>
 		</div>
 		<div class="my-course-leftside d-flex">
-			<button class="bi bi-download btn btn-unlike-mycourse" onclick="download('<COURSE-ID>');"></button>
+			<button class="bi bi-download btn btn-download-mycourse" onclick="goto(Links.downloadAll + '<COURSE-ID>');"></button>
 			<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="goto(Links.course+'<COURSE-ID>');"></button>
 		</div>
 	</div>
@@ -605,7 +605,7 @@ var showMyCourses = () => {
 			</div>
 		</div>
 		<div class="my-course-leftside d-flex">
-			<button class="bi bi-download btn btn-unlike-mycourse" onclick="download('<COURSE-ID>');"></button>
+			<button class="bi bi-download btn btn-download-mycourse" onclick="goto(Links.downloadAll + '<COURSE-ID>');"></button>
 			<button class="bi bi-caret-left btn btn-goto-mycourse" onclick="goto(Links.course+'<COURSE-ID>');"></button>
 		</div>
 	</div>
@@ -682,4 +682,22 @@ function requestAdmin(user_guid) {
 // logout (different by delete account)
 var logout = () => {
 	localStorage.removeItem("mluser");
+};
+
+// delete from cart
+var deleteCart = (id) => {
+	console.log(id);
+	document.getElementById(`course_${id}`).remove();
+	// todo : send XHR for delete course from cart
+};
+
+// buy a course from cart
+var buy = (id) => {
+	// todo: send XHR for buy this course
+	// todo: check if There was enough money in the wallet pay from the wallet, else Inventory increase
+};
+
+// support
+var support = () => {
+	// todo: set from righchat api
 };

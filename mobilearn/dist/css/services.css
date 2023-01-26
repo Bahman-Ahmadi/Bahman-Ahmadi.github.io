@@ -107,19 +107,6 @@ body {
 	color: var(--color-green);
 }
 
-/* chart customization */
-.ct-series-a .ct-bar, .ct-series-a .ct-line, .ct-series-a .ct-point, .ct-series-a .ct-slice-donut {
-	stroke: var(--color-primary)!important;
-	stroke-width: 3px!important;
-}
-.ct-grid, .ct-point, .ct-label {
-	color: var(--color-gray)!important;
-}
-.chart-state {
-	color: var(--color-primary-low);
-	font-family: "vazir"!important;
-}
-
 /** MASTERS **/
 .masters {
 	display: grid;

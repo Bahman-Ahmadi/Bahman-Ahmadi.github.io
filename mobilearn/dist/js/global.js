@@ -1,39 +1,43 @@
 var user_guid = localStorage.getItem("mluser");
 
-var root = "mobilearn/"
+var root = "mobilearn/";
 
 var Links = {
-	"register": root+"register.html",
-	"login": root+"register.html?tab=login",
-	"signup": root+"register.html?tab=signup",
-	"search": root+"search.html?q=",
-	"search_cat": root+"search.html?c=",
-	"course": root+"course.html?id=",
+	"register": "register.html",
+	"login": "register.html?tab=login",
+	"signup": "register.html?tab=signup",
+	"search": "search.html?q=",
+	"search_cat": "search.html?c=",
+	"course": "course.html?id=",
 	"blog": {
-		"posts": root+"blog.html",
-		"post": root+"blog.html?post="
+		"posts": "blog.html",
+		"post": "blog.html?post=",
+		"shortlinks": "https://l.bit.ir/mlb?id="
 	},
-	"pay": root+"pay?count=",
+	"pay": "pay?count=",
 	"instagram": "https://instagram.com/mobi.learn",
 	"telegram": "https://t.me/mobi_learn",
 	"github": "https://github.com/mobi_learn",
 	"community": "https://t.me/mobilearn_community",
 	"shortlinks": "https://l.bit.ir/ml?id=",
-	"watch": root+`watch?user=${user_guid}&course=`,
-	"download": root+`download?user=${user_guid}&course=`
+	"watch": `watch?user=${user_guid}&course=`,
+	"download": `download?user=${user_guid}&course=`,
+	"downloadAll": `dlAll?user=${user_guid}&course=`,
+	"profile": "profile.html?id=",
+	"upload": "#"
 };
 
 var theme = localStorage.getItem("theme") == null ? "light" : localStorage.getItem("theme");
 document.head.innerHTML += `<link rel="stylesheet" href="dist/css/vars-${theme}.css"/>`;
 
-var goto = (URL, download=false) => {
+var goto = (URL, download=false, target="") => {
 	var a = document.getElementById("goto");
 	if (a != null) {
-		a.href = URL.indexOf('http') != -1 ? URL : URL != '' ? window.location.origin+'/'+URL : '';
-		a.target = download ? "_blank" : "";
+		a.href = URL.indexOf('http') != -1 ? URL : URL != '' ? window.location.origin+'/'+root+URL : '';
+		a.target = download || target == "_blank" ? "_blank" : "";
 		download ? a.download = "" : "";
 	} else {
-		document.body.innerHTML += `<a href="${URL.indexOf('http') != -1 ? URL : URL != '' ? window.location.origin+'/'+URL : ''}" id="goto" ${download ? 'target="_blank" download' : ''}></a>`; 
+		document.body.innerHTML += `<a href="${URL.indexOf('http') != -1 ? URL : URL != '' ? window.location.origin+'/'+root+URL : ''}" id="goto" ${download ? 'target="_blank" download' : target == '_blank' ? 'target="_blank"' : ''}></a>`; 
 		a = document.getElementById("goto");
 	}
 	a.click();
@@ -46,7 +50,7 @@ var sleep = async (ms) => {
 // Clickablization bottomnav items
 if (document.getElementsByClassName("item") != null) {
 	document.querySelectorAll('.item').forEach((el) => {
-		el.onclick = () => { goto(root+el.id+".html") };
+		el.onclick = () => { goto(el.id+".html") };
 	});
 }
 
@@ -69,6 +73,42 @@ var separatingNums = (num) => {
 	}
 	return str.join('.');
 };
+
+// set upload event automatically
+function autoUpload() {
+	var script = document.createElement('script');
+	script.setAttribute('src','dist/lib/jQuery/jquery-3.6.3.min.js');
+	document.head.appendChild(script);
+
+	document.querySelectorAll('input[type="file"]').forEach((el) => {
+		el.onchange = (e) => {
+			var myFormData = new FormData();
+			myFormData.append('pictureFile', el.files[0]);
+
+			var success = (resp) => {
+				el.src = resp;
+			};
+
+			$.ajax({
+				url: Links.upload,
+				type: 'POST',
+				processData: false,
+				contentType: false,
+				dataType : 'json',
+				data: myFormData
+			}).then(function (resp){
+				success(resp.responseText);
+			}, function (resp) {
+				if (resp.status == 200) {
+					success(resp.responseText);
+				} else {
+					console.log("Something went wrong");
+				}
+			});
+		};
+	});
+}
+setInterval(autoUpload, 500);
 
 // TOAST
 var toast = async (colors, texts, time, event) => {
@@ -206,7 +246,7 @@ var dialog = (colors, contents) => {
 };
 
 // TOAST SAMPLES
-var errorToast = async (text, event=()=>{}, button="تلاش مجدد") => {
+var errorToast = async (text, event=(box)=>{box.remove()}, button="تلاش مجدد") => {
 	await toast(
 		[
 			"var(--color-white);",
@@ -223,7 +263,7 @@ var errorToast = async (text, event=()=>{}, button="تلاش مجدد") => {
 	);
 };
 
-var successToast = async (text, event=()=>{}, button="باشه") => {
+var successToast = async (text, event=(box)=>{box.remove()}, button="باشه") => {
 	await toast(
 		[
 			"var(--color-white)",
