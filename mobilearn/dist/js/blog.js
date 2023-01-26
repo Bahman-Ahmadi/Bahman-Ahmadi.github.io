@@ -1,4 +1,4 @@
-if (localStorage.getItem("mluser") == null || localStorage.getItem("mladmin") == null) {
+if (localStorage.getItem("mluser") == null && localStorage.getItem("mladmin") == null) {
 	goto(Links.register);
 }
 
