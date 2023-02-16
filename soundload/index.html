@@ -1,57 +1,65 @@
-<button onclick="document.write(GET('//google.com'));">Click Me</button>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/eruda/2.11.2/eruda.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-<script type="text/javascript">
-    var app = Android;
-    
-    // HTTP GET
-    var GET = (url) => {
-    	var result;
-    	try {
-    		$.ajax({
-    			type: "GET",
-    			url: url,
-    			datatype: "json",
-    			async: false,
-    			success: function(data){
-    				result = data
-    			}
-    		});
-    	} catch (e) {
-    	    console.log("error:",e);
-    	}
-    	return result;
-    };
-    
-    // HTTP POST
-    var POST = (url, data, isFile=false) => {
-    	var result;
-    	try {
-    	    if (isFile) {
-        	    $.ajaxSetup({
-                    async: false,
-                    processData: false, // important
-                    contentType: false, // important
-                });
-    	    } else {
-    	        $.ajaxSetup({
-                    async: false
-    	        });
-    	    }
-    	    $.post(url, data).done((data) => {result = data});
-    	} catch (e) {
-    	    console.log("error:",e)
-    	}
-    	return result;
-    };
-
-    function showAndroidToast(toast) {
-        if(typeof app !== "undefined" && app !== null) {
-            app.showToast(toast);
-        } else {
-            alert("Not viewing in webview");
-        }
-    }
-</script>
-
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/eruda/2.11.2/eruda.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script>
+            // HTTP GET
+            var GET = (url) => {
+            	var result;
+            	try {
+            		$.ajax({
+            			type: "GET",
+            			url: url,
+            			datatype: "json",
+            			async: false,
+            			success: function(data){
+            				result = data
+            			}
+            		});
+            	} catch (e) {
+            	    console.log("error:",e);
+            	}
+            	return result;
+            };
+            
+            // HTTP POST
+            var POST = (url, data, isFile=false) => {
+            	var result;
+            	try {
+            	    if (isFile) {
+                	    $.ajaxSetup({
+                            async: false,
+                            processData: false, // important
+                            contentType: false, // important
+                        });
+            	    } else {
+            	        $.ajaxSetup({
+                            async: false
+            	        });
+            	    }
+            	    $.post(url, data).done((data) => {result = data});
+            	} catch (e) {
+            	    console.log("error:",e)
+            	}
+            	return result;
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="document.write(GET('#'));">Click Me</button>
+        <script type="text/javascript">
+            var app = Android;
+        
+            function showAndroidToast(toast) {
+                if(typeof app !== "undefined" && app !== null) {
+                    app.showToast(toast);
+                } else {
+                    alert("Not viewing in webview");
+                }
+            }
+        </script>
+        
+    </body>
+</html>
