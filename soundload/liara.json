@@ -3,7 +3,7 @@
   "port": 80,
   "disks": [
     {
-      "name": "static",
+      "name": "main",
       "mountTo": "/usr/src/app/static"
     }
   ]
