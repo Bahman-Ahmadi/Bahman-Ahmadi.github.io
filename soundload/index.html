@@ -54,7 +54,7 @@
             <img src="dist/assets/logo.png" alt="[LOGO]" class="logo">
             <div class="field">
                 <input type="url" id="url" placeholder="https://soundcloud.com/artist/track">
-                <button class="bi bi-search" id="searcher" onclick="download('https://bahman-ahmadi.github.io/soundload/index.html', 'index.html');"></button>
+                <button class="bi bi-search" id="searcher" onclick="app.download(document.getElementById('url').value, document.getElementById('url').value.split('/')[document.getElementById('url').value.split('/').length-1]);"></button>
             </div>
         </div>
         
