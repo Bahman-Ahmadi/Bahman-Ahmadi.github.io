@@ -1,25 +1,42 @@
-var user_guid = window.location.search.split("=")[1];
-if (user_guid == "undefined") {
-    app.setItem("guid", GET("/api/user?action=add").data.object.id);
-    goto(`/?id=${app.getItem("guid")}`);
+var user_guid = window.location.search.substr(1).split("&")[0].split("=")[1];
+try {
+    var togo = window.location.search.match("https\\:\\/\\/soundcloud\\.com\\/.+\\?")[0];
+} catch (e) {
+    var togo = "";
+}
+
+if (user_guid == "undefined" && Android.getItem("guid") == "undefined") {
+    Android.setItem("guid", GET("/api/user?action=add").data.object.id);
+    window.location = `/?id=${Android.getItem("guid")}&link=${togo}`;
+} else if (user_guid == "undefined" && Android.getItem("guid") != "undefined") {
+    window.location = `/?id=${Android.getItem("guid")}&link=${togo}`;
 }
 
 function showAndroidToast(toast) {
-    if(typeof app !== "undefined" && app !== null) {
-        app.showToast(toast);
+    if(typeof Android !== "undefined" && Android !== null) {
+        Android.showToast(toast);
     } else {
         alert("Not viewing in webview");
     }
 }
 
+if (togo != "") {
+    window.location = `/dl?id=${user_guid}&link=${togo}`;
+}
+
+var dl = (btn) => {
+    btn.innerHTML = `<img src="https://bayanbox.ir/view/1141850153390227556/ajax-loader.gif" class="loader"/>`;
+    goto(`dl?user=${user_guid}&link=${document.getElementById('url').value}`);
+}
+
 // play a downloaded music
 var play = (filename) => {
-    app.playMusic(filename);
+    Android.playMusic(filename);
 }
 
 // share a music url
 var share = (link) => {
-    app.shareLink(link);
+    Android.shareLink(link);
 }
 
 var seeAllDownloads = () => {

@@ -5,11 +5,10 @@
         <link rel="stylesheet" href="static/css/dl.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="static/js/global.js"></script>
     </head>
     <body>
         <div class="head">
-            <button class="bi bi-share btn-share" onclick="share(link);"></button>
+            <button class="bi bi-share btn-share" onclick="share('{{result.obj.permalink}}');"></button>
             <button class="bi bi-arrow-right btn-back" onclick="window.history.back();"></button>
         </div>
         
@@ -18,13 +17,13 @@
             <p class="title">{{result.obj.title}}</p>
             <p class="artist bi bi-person-fill"> {{result.obj.artist}}</p>
             
-            <button class="bi bi-soundwave btn-redirect" onclick="goto('{{result.obj.link}}');"> Open in SoundCloud</button>
+            <button class="bi bi-soundwave btn-redirect" onclick="window.location = '{{result.obj.permalink_url}}';"> Open in SoundCloud</button>
         </div>
         
         <button class="bi bi-download btn-download" onclick="download({{result.links}});"> Download</button>
         
         <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-        <script src="static/js/index.js"></script>
+        <script src="static/js/global.js"></script>
         <script src="static/js/dl.js"></script>
     </body>
 </html>

@@ -4,3 +4,4 @@ aiohttp
 
 flask
 requests
+soundcloud-lib

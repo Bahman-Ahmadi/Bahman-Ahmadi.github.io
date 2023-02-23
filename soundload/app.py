@@ -1,7 +1,8 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, redirect, render_template
 from json import loads, dumps
-from lib import SoundcloudAPI
+from sclib import SoundcloudAPI
 from models import User
+from werkzeug.exceptions import HTTPException
 
 app = Flask(__name__)
 
@@ -12,14 +13,18 @@ def jsonification(dictionary:dict):
 @app.route('/')
 def index():
     args = [request.args[i] for i in request.args]
-    user = User().get(args[0])['data']['object']
-    favs = User().getTopFavArtists(args[0])['data']['results']
+    try:
+        user = User().get(args[0])['data']['object']
+        favs = User().getTopFavArtists(args[0])['data']['results']
+    except:
+        user = {"id": args[0], "downloads": [], "artists": []}
+        favs = []
     return render_template('index.html', user=user, userFavArtists=favs)
 
 @app.route('/dl')
 def dl():
     args = [request.args[i] for i in request.args]
-    return render_template('dl.html', result=User().download(args[0], args[1])['data'])
+    return render_template('dl.html', result=User().download(args[0], args[1])["data"])
 
 ############ API ############
 @app.route('/api/getSCObject', methods=["POST"])
@@ -49,5 +54,12 @@ def getFavoriteArtist():
     args = [request.args[i] for i in request.args]
     return User().getTopFavArtists(*args)
 
+
+'''
+@app.errorhandler(Exception)
+def handle_error(e):
+    return redirect("/?id=undefined")
+'''
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)

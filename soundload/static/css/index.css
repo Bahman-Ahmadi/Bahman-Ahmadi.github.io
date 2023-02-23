@@ -35,11 +35,15 @@ body {
     border: 0.7px solid #cc3333;
 }
 #searcher {
-    padding: 12px 8px;
+    padding: 12px;
     background: #cc3333;
     color: #ffffff;
     border: none;
     border-radius: 0 50px 50px 0;
+}
+.loader {
+    width: 14px;
+    height: 14px;
 }
 
 /*--- RECENT DOWNLOADS ---*/

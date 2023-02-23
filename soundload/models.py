@@ -1,8 +1,9 @@
 from json import loads, dumps
 from random import choice
-from lib import SoundcloudAPI
+from sclib import SoundcloudAPI
 from os.path import isfile
 from collections import Counter
+from re import search
 
 class BaseModel:
     def __init__(self, db:str):
@@ -50,6 +51,7 @@ class User(BaseModel):
         return {"status": "OK", "statuscode": 200, "data": {"object": self.db[ID]}}
 
     def download(self, guid:str, link:str) -> dict:
+        link = search(r'https\:\/\/soundcloud\.com\/.+\?', link).group()[:-1] if "?" in link else link
         Type = "playlist" if "/sets/" in link else "track"
         resp = SoundcloudAPI('VTl9gNS05wF10zfiwKJ6FwK9mJsLVuAV').resolve(link)
         dlLinks = []
@@ -70,6 +72,7 @@ class User(BaseModel):
                 self.db[guid]['artists'].append({"link": track.user['permalink_url'], "avatar": track.user['avatar_url'], "name": track.artist})
         User().edit(guid, 'downloads', self.db[guid]['downloads'])
         User().edit(guid, 'artists', self.db[guid]['artists'])
+        print(resp, dlLinks)
         return {"status": "OK", "statuscode": 200, "data": {"obj": resp, "links": dlLinks, "user": self.db[guid]}}
 
     def getTopFavArtists(self, guid:str, count:int=3) -> dict:

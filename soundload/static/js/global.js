@@ -2,6 +2,8 @@ try {
     var app = Android;
 } catch (e) { console.log(e) }
 
+var root = "";
+
 // HTTP GET
 var GET = (url) => {
 	var result;
@@ -51,7 +53,7 @@ var POST = (url, data, isFile=false) => {
 
 // link diverter
 var goto = (URL, download=false, target="") => {
-	var a = document.getElementById("goto");
+    var a = document.getElementById("goto");
 	if (a != null) {
 		a.href = URL.indexOf('http') != -1 ? URL : URL != '' ? window.location.origin+'/'+root+URL : '';
 		a.target = download || target == "_blank" ? "_blank" : "";

@@ -2,17 +2,16 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width"/>
-        <link rel="stylesheet" href="static/css/index.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="static/js/global.js"></script>
     </head>
     <body>
         <div class="header">
             <img src="static/assets/logo.png" alt="[LOGO]" class="logo">
             <div class="field">
                 <input type="url" id="url" placeholder="https://soundcloud.com/artist/track">
-                <button class="bi bi-search" id="searcher" onclick="goto(`/dl?user=${user_guid}&link=${document.getElementById('url').value}`);"></button>
+                <button id="searcher" onclick="dl(this);"><i class="bi bi-search"></i></button>
             </div>
         </div>
         
@@ -23,7 +22,7 @@
             </div>
             
             <div id="dls">
-                {% for download in user.downloads[:3] %}
+                {% for download in user.downloads[-3:][::-1] %}
                 <div class="recent-dl">
                     <div class="recent-dl-rightside" onclick="goto('{{download.link}}');">
                         <img class="recent-dl-cover" src="{{download.cover}}" alt="[TRACK]">
@@ -61,6 +60,7 @@
         </div>
         
         <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+        <script src="static/js/global.js"></script>
         <script src="static/js/index.js"></script>
     </body>
 </html>
