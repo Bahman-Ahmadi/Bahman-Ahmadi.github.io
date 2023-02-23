@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "ir.bpr.soundload"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 2
+        versionName "1.1"
+    }
+    
+    lintOptions {
+        disable "InvalidPackage"
+        disable "MissingTranslation"
+   }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+	compile 'com.telly:groundy:1.5'
+	compile 'com.telly:groundy-compiler:1.5'
+}
