@@ -1,0 +1,13 @@
+{
+    "bio": "توسعه‌دهندهٔ وب و علاقمند به پایتون :)",
+    "about": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi aut nemo unde voluptates doloremque. Ab quibusdam totam et doloremque vel similique unde ullam, qui officia quisquam quaerat non, facilis possimus!",
+    "projects": [
+        {
+            "logo": "https://camo.githubusercontent.com/b8d8f1f334f980b0a975d9e8f27e42122bc342d419b7b16535acdc057a96ec6a/68747470733a2f2f727562696b616c69622e6769746875622e696f2f6173736574732f6c6f676f2e706e67",
+            "name": "کتابخونه روبیکا",
+            "lang": "پایتون",
+            "date": "۱۴۰۱/۱۲/۲۶",
+            "link": "https://github.com/Bahman-Ahmadi/rubika"
+        }
+    ]
+}

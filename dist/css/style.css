@@ -207,6 +207,32 @@
     border: none;
     float: left;
 }
+.all-projects {
+    width: 100%;
+    padding: 8px;
+    font-weight: 500;
+    text-align: center;
+    color: rgb(255, 61, 0);
+    font-family: Vazirmatn;
+    border-color: transparent;
+    background: transparent;
+}
+
+.contact-key {
+    font-family: Vazirmatn;
+    font-weight: 200;
+}
+.contact-val {
+    font-family: Vazirmatn;
+    font-weight: 700;
+    text-decoration: none;
+    overflow-x: scroll;
+}
+.iran-flag {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
 
 .fp-overflow {
     height: 100%;
@@ -227,4 +253,7 @@
 @keyframes jump {
     from { transform: translate(0, 10vh); }
     to { transform: translate(0, 12vh); }
+}
+::-webkit-scrollbar {
+    width: 0!important;
 }
