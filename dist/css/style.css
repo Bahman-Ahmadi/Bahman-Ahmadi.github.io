@@ -1,0 +1,104 @@
+@import url(https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-Variable-font-face.css);
+
+#s1 {
+    position: relative;
+    overflow: hidden;
+}
+#c1 {
+    background-image: url('../assets/bg1.jpg');
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    filter: blur(2px);
+}
+#cc1 {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    top: 0;left: 0;
+    bottom: 0;right: 0;
+    margin: auto;
+    
+    color: white;
+    text-align: center;
+    direction: rtl;
+    padding: 10px;
+    border-radius: 0.5rem;
+    background: #212121aa;
+}
+
+.avatar {
+    width: 170px;
+    height: 170px;
+    border-radius: 1rem;
+}
+.name {
+    font-family: Vazirmatn;
+    font-size: 20px;
+    font-weight: 900;
+    margin-top: 10px;
+}
+.bio {
+    font-family: Vazirmatn;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.buttons {
+    margin-top: 8px;
+}
+.contact {
+    font-family: Vazirmatn;
+    font-weight: bold;
+    font-size: 16px;
+    background: #FF3D00;
+    color: #FFFFFF;
+    padding: 4px;
+    border-radius: 0.25rem;
+    border-color: transparent;
+}
+.projects {
+    font-family: Vazirmatn;
+    font-weight: normal;
+    font-size: 16px;
+    background: transparent;
+    color: #FF3D00;
+    padding: 4px;
+    border-radius: 0.25rem;
+    border: 0.5px solid #FF3D00;
+}
+.more {
+    transform: translate(0, 10vh);
+    font-size: 16px;
+    width: 50px;
+    height: 50px;
+    background: rgb(255,61,0);
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 50px;
+    border-color: transparent;
+    animation: jump 800ms infinite ;
+    box-shadow: 0 0 0 .25rem rgba(255,61,0,.3)
+}
+
+.fp-overflow {
+    overflow: hidden !important;
+}
+@-webkit-keyframes jump {
+    from { transform: translate(0, 10vh); }
+    to { transform: translate(0, 12vh); }
+}
+@-o-keyframes jump {
+    from { transform: translate(0, 10vh); }
+    to { transform: translate(0, 12vh); }
+}
+@-moz-keyframes jump {
+    from { transform: translate(0, 10vh); }
+    to { transform: translate(0, 12vh); }
+}
+@keyframes jump {
+    from { transform: translate(0, 10vh); }
+    to { transform: translate(0, 12vh); }
+}
