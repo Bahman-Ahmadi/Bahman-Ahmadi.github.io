@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="dist/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Bahman Ahmadi</title>
 </head>
 <body>
@@ -19,8 +20,8 @@
                 <span class="bio">توسعه‌دهنده وب و علاقمند به پایتون :)</span> <br>
                 
                 <div class="buttons">
-                    <button class="contact">ارتباط با من</button>
-                    <button class="projects">پروژه‌های من</button>
+                    <a href="#contact"><button class="contact">ارتباط با من</button></a>
+                    <a href="#projects"><button class="projects">پروژه‌های من</button></a>
                 </div>
                 
                 <a href="#s2"><button class="bi bi-arrow-down more"></button></a>
@@ -28,11 +29,120 @@
         </div>
         <div class="section" id="s2">
             <div class="content-container" id="cc2">
-                <div class="content" id="c2">Some content</div>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                  <div class="container-fluid">
+                    <a class="navbar-brand" href="#">بهمن <span class="brand-dot">.</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#"><span class="brand-dot">.</span> خونه</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#about"><span class="brand-dot">.</span> دربارهٔ من</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#projects"><span class="brand-dot">.</span> پروژه‌ها</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#contact"><span class="brand-dot">.</span> ارتباط با من</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </nav>
+                <div class="header-image"></div>
+                <div class="container content" id="c2">
+                    <div class="part" id="profile">
+                        <img class="avatar-profile" src="https://avatars.githubusercontent.com/u/75687940?v=4" alt="BAHMAN">
+                        <p class="name-profile">بهمن احمدی</p>
+                        <p class="bio-profile">توسعه‌دهندهٔ وب و علاقمند به پایتون :)</p>
+                    </div>
+                    
+                    <div class="line"></div>
+                    
+                    <div class="part" id="about">
+                        <p class="part-title">دربارهٔ من</p>
+                        <p class="about-me">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi aut nemo unde voluptates doloremque. Ab quibusdam totam et doloremque vel similique unde ullam, qui officia quisquam quaerat non, facilis possimus!</p>
+                    </div>
+                    
+                    <div class="line"></div>
+                    
+                    <div class="part" id="projects">
+                        <p class="part-title">پروژه ها</p>
+                        <div class="projects-list row">
+                            <div class="project col-xs-12 col-sm-12 col-md-5 col-md-5">
+                                <div class="project-header d-flex">
+                                    <img src="https://camo.githubusercontent.com/b8d8f1f334f980b0a975d9e8f27e42122bc342d419b7b16535acdc057a96ec6a/68747470733a2f2f727562696b616c69622e6769746875622e696f2f6173736574732f6c6f676f2e706e67" alt="rubika" class="project-logo">
+                                    <div class="project-header-texts">
+                                        <p class="project-name">کتابخونه روبیکا</p>
+                                        <p class="project-lang">پایتون</p>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <p class="project-date">آخرین بروزرسانی ۱۹ اوت ۲۰۲۲</p>
+                                </div>
+                                <div class="project-line"></div>
+                                <a href="https://github.com/Bahman-Ahmadi/rubika"><button class="project-view">اطلاعات بیشتر</button></a>
+                            </div>
+                            <div class="project col-xs-12 col-sm-12 col-md-5 col-md-5">
+                                <div class="project-header d-flex">
+                                    <img src="https://camo.githubusercontent.com/b8d8f1f334f980b0a975d9e8f27e42122bc342d419b7b16535acdc057a96ec6a/68747470733a2f2f727562696b616c69622e6769746875622e696f2f6173736574732f6c6f676f2e706e67" alt="rubika" class="project-logo">
+                                    <div class="project-header-texts">
+                                        <p class="project-name">کتابخونه روبیکا</p>
+                                        <p class="project-lang">پایتون</p>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <p class="project-date">آخرین بروزرسانی ۱۹ اوت ۲۰۲۲</p>
+                                </div>
+                                <div class="project-line"></div>
+                                <a href="https://github.com/Bahman-Ahmadi/rubika"><button class="project-view">اطلاعات بیشتر</button></a>
+                            </div>
+                            <div class="project col-xs-12 col-sm-12 col-md-5 col-md-5">
+                                <div class="project-header d-flex">
+                                    <img src="https://camo.githubusercontent.com/b8d8f1f334f980b0a975d9e8f27e42122bc342d419b7b16535acdc057a96ec6a/68747470733a2f2f727562696b616c69622e6769746875622e696f2f6173736574732f6c6f676f2e706e67" alt="rubika" class="project-logo">
+                                    <div class="project-header-texts">
+                                        <p class="project-name">کتابخونه روبیکا</p>
+                                        <p class="project-lang">پایتون</p>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <p class="project-date">آخرین بروزرسانی ۱۹ اوت ۲۰۲۲</p>
+                                </div>
+                                <div class="project-line"></div>
+                                <a href="https://github.com/Bahman-Ahmadi/rubika"><button class="project-view">اطلاعات بیشتر</button></a>
+                            </div>
+                            <div class="project col-xs-12 col-sm-12 col-md-5 col-md-5">
+                                <div class="project-header d-flex">
+                                    <img src="https://camo.githubusercontent.com/b8d8f1f334f980b0a975d9e8f27e42122bc342d419b7b16535acdc057a96ec6a/68747470733a2f2f727562696b616c69622e6769746875622e696f2f6173736574732f6c6f676f2e706e67" alt="rubika" class="project-logo">
+                                    <div class="project-header-texts">
+                                        <p class="project-name">کتابخونه روبیکا</p>
+                                        <p class="project-lang">پایتون</p>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <p class="project-date">آخرین بروزرسانی ۱۹ اوت ۲۰۲۲</p>
+                                </div>
+                                <div class="project-line"></div>
+                                <a href="https://github.com/Bahman-Ahmadi/rubika"><button class="project-view">اطلاعات بیشتر</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="line"></div>
+                    
+                    <div class="part" id="contact">
+                        <p class="part-title">ارتباط با من</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.19/fullpage.min.js"></script>
     <script src="dist/libs/particles.min.js"></script>
     <script src="dist/js/app.js"></script>

@@ -11,7 +11,7 @@
     background-size: cover;
     background-position: center;
     position: relative;
-    filter: blur(2px);
+    filter: brightness(50%);
 }
 #cc1 {
     position: absolute;
@@ -21,6 +21,7 @@
     bottom: 0;right: 0;
     margin: auto;
     
+    backdrop-filter: blur(2px);
     color: white;
     text-align: center;
     direction: rtl;
@@ -83,8 +84,133 @@
     box-shadow: 0 0 0 .25rem rgba(255,61,0,.3)
 }
 
+#s2 {
+    background: #e0e0e0;
+}
+.navbar {
+    top: 0;left: 0;right: 0;
+    margin: auto !important;
+    position: absolute !important;
+    direction: rtl;
+    font-family: Vazirmatn;
+    font-weight: 900;
+    z-index: 1030;
+}
+.brand-dot {
+    color: rgb(255, 61, 0);
+}
+.nav-link {
+    font-weight: 300 !important;
+}
+.nav-link.active {
+    font-size: 16px;
+    font-weight: 500 !important;
+}
+
+.header-image {
+    width: 100vw;
+    height: 20vh;
+    background-size: cover;
+    background-image: url('../assets/bg1.jpg');
+}
+
+#c2 {
+    direction: rtl;
+}
+
+.part {
+    margin: 10px 15px;
+}
+
+#profile {
+    transform: translate(0, -40px);
+}
+.avatar-profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    border: 3px solid #e0e0e0;
+}
+.name-profile {
+    font-family: Vazirmatn;
+    margin: 0 10px 0 0;
+    font-weight: 600;
+}
+.bio-profile {
+    font-family: Vazirmatn;
+    margin: 0 10px 0 0;
+    font-weight: 300;
+    color: #555;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background: #999999aa;
+    opacity: 0.7;
+}
+
+.part-title {
+    font-family: Vazirmatn;
+    font-weight: 500;
+    font-size: 17px;
+}
+.about-me {
+    font-family: Vazirmatn;
+    font-weight: 200;
+    color: #555;
+}
+
+.project {
+    background: #F5F5F5;
+    border-radius: 1rem;
+    box-shadow: 0 0 8px #e0e0e0;
+    margin: 8px auto;
+    padding: 8px;
+}
+.project-logo {
+    width: 50px;
+    height: 50px;
+    margin: auto 3px;
+}
+.project-header-texts {
+    margin: auto 8px;
+}
+.project-name {
+    font-family: Vazirmatn;
+    font-weight: 600;
+    font-size: 14px;
+    margin: auto 0 0 0;
+}
+.project-lang {
+    font-family: Vazirmatn;
+    font-size: 12px;
+    margin: 0 0 auto 0;
+    color: #777;
+}
+.project-content {
+    font-family: Vazirmatn;
+    font-weight: 200;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.project-line {
+    width: 100%;
+    height: 1px;
+    background: #999999aa;
+}
+.project-view {
+    font-family: Vazirmatn;
+    background: transparent;
+    font-size: 13px;
+    padding: 8px;
+    border: none;
+    float: left;
+}
+
 .fp-overflow {
-    overflow: hidden !important;
+    height: 100%;
+    overflow-x: hidden !important;
 }
 @-webkit-keyframes jump {
     from { transform: translate(0, 10vh); }
