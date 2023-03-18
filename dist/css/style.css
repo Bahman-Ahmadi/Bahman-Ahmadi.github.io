@@ -161,6 +161,11 @@
     color: #555;
 }
 
+.img-fluid {
+    width: 200px;
+    height: auto;
+}
+
 .project {
     background: #F5F5F5;
     border-radius: 1rem;
