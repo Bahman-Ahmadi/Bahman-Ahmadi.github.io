@@ -32,7 +32,7 @@ document.querySelectorAll(".about-me").forEach((el) => {
 });
 
 db.projects.forEach((project) => {
-    $(".projects-list")[0].innerHTML = `
+    $(".projects-list")[0].innerHTML += `
 <div class="project col-xs-12 col-sm-12 col-md-5 col-md-5">
     <div class="project-header d-flex">
         <img src="${project.logo}" alt="rubika" class="project-logo">
