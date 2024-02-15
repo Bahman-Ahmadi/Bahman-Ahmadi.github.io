@@ -123,11 +123,11 @@
 }
 
 #profile {
-    transform: translate(0, -40px);
+    transform: translate(0, -60px);
 }
 .avatar-profile {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     border-radius: 100px;
     border: 3px solid #e0e0e0;
 }
@@ -148,6 +148,7 @@
     height: 1px;
     background: #999999aa;
     opacity: 0.7;
+    margin: 20px 0;
 }
 
 .part-title {
@@ -166,14 +167,41 @@
     height: auto;
 }
 
-.project {
+.skill {
+	width: 45% !important;
+}
+.skill-logo {
+	width: 75px!important;
+	height: 75px!important;
+}
+.skill-name {
+	padding-top: 12px;
+}
+.skill-logo, .skill-name {
+	margin-left: auto!important;
+	margin-right: auto!important;
+}
+.skill-percent {
+	font-family: Vazirmatn;
+    font-weight: 200;
+    font-size: 12px;
+    font-weight: bold;
+    padding-right: 2px;
+    color: #555;
+}
+.skill-name, .skill-percent, .skill-logo, .skill-col {
+	width: fit-content;
+	text-align: center;
+	margin: auto;
+}
+.project, .skill {
     background: #F5F5F5;
     border-radius: 1rem;
     box-shadow: 0 0 8px #e0e0e0;
     margin: 8px auto;
     padding: 8px;
 }
-.project-logo {
+.project-logo, .skill-logo {
     width: 50px;
     height: 50px;
     margin: auto 3px;
@@ -182,13 +210,13 @@
 .project-header-texts {
     margin: auto 8px;
 }
-.project-name {
+.project-name, .skill-name {
     font-family: Vazirmatn;
     font-weight: 600;
     font-size: 14px;
     margin: auto 0 0 0;
 }
-.project-lang {
+.project-lang, .skill-label {
     font-family: Vazirmatn;
     font-size: 12px;
     margin: 0 0 auto 0;
@@ -238,6 +266,17 @@
     width: 30px;
     height: 30px;
     border-radius: 50px;
+}
+
+.fixed-bottom {
+	width: fit-content;
+	height: fit-content;
+	margin: auto 10px 0 auto!important;
+}
+.btm {
+	width: 65px;
+	height: 65px;
+	opacity: .9;
 }
 
 .fp-overflow {
